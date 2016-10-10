@@ -731,7 +731,7 @@ curl ‐X DELETE "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey
 |---|---|---|---|---|
 |appkey|	string|	Y| -|토스트 클라우드 web console을 통해서 생성한 appkey|
 |folderIds|	string| -| -|삭제 할 폴더의 ID 리스트 (콤마로 구분됨)|
-|fields|	string| -| -| 삭제 할 파일의 ID 리스트 (콤마로 구분됨)|
+|files|	string| -| -| 삭제 할 파일의 ID 리스트 (콤마로 구분됨)|
 |includeThumbnail|	boolean|	N|	false|	삭제 할 파일에 의해 생성된 오퍼레이션 파일도 삭제|
 
 'folderIds' 또는 'fileIds'는 최소 하나 필수 파라미터로 사용해야 합니다.
