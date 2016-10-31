@@ -6,7 +6,7 @@ Advance Preparation
 
 To use API, AppKey and SecretKey are required. Click on “Create” button to create SecretKey.
 
-<img src="media/image1.png" width="560" height="249" />
+<img alt="[그림 1 API용 AppKey와 SecreKey 확인]" src="http://static.toastoven.net/prod_img2/img_11.png" />
 
 \[Table 1 Confirm AppKey and SecretKey for API\]
 
