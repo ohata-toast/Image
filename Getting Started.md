@@ -67,7 +67,7 @@ Console에서 [Contents] > [Image]를 선택한 후 [그림 1]의 [상품이용]
 
 3-1.[그림 7]에 옵션의 이름과 설명을 입력합니다. 동일한 옵션 이름이 있을 때는 뒤에 구분자를 덧붙여서 사용하길 권장합니다. 설명은 사용자가 알아보기 쉽게 해당 썸네일 옵션에 대한 간단한 설명을 입력 할 수 있습니다.<br>
     * [실시간 처리 활성 옵션], [Anti-Aliasing 처리 활성 옵션] 체크박스로 기능 적용 여부를 선택하실 수 있습니다.     
-    * Anti-Aliasing은 높은 해상도의 신호를 낮은 해상도에서 나타낼 때 생기는 깨진 패턴을 최소화하는 방법입니다.<a href="https://ko.wikipedia.org/wiki/%EC%95%A4%ED%8B%B0%EC%97%90%EC%9D%BC%EB%A6%AC%EC%96%B4%EC%8B%B1"> Wikipedia® 앤티에일리어싱</a>
+    * Anti-Aliasing은 높은 해상도의 신호를 낮은 해상도에서 나타낼 때 생기는 깨진 패턴을 최소화하는 방법입니다.<a href="https://ko.wikipedia.org/wiki/%EC%95%A4%ED%8B%B0%EC%97%90%EC%9D%BC%EB%A6%AC%EC%96%B4%EC%8B%B1"> Wikipedia® 앤티에일리어싱</a><br>
 3-2.[그림7]에 [+추가] 드롭 다운 버튼에서 이미지 오퍼레이션 옵션을 선택하여 이미지 프로세싱 시나리오를 설정 할 수 있습니다.
 
 ![[그림 8] 썸네일 옵션 추가 – 이미지 오퍼레이션 추가](http://static.toastoven.net/prod_img/img_20_new.png)
