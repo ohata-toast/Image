@@ -126,4 +126,4 @@ Console에서 [Contents] > [Image]를 선택한 후 [그림 1]의 [상품이용]
 결과 예) sample.gif, sample_2.gif, sample 3.gif, sample_샘플_100x100.png  
 
 ### 참고 자료
-- 위키피디아: https://ko.wikipedia.org/wiki/앤티에일리어싱
+- Anti-Aliasing 위키피디아: <a href="https://ko.wikipedia.org/wiki/앤티에일리어싱" target="_blank">https://ko.wikipedia.org/wiki/앤티에일리어싱</a>
