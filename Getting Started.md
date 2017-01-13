@@ -124,3 +124,6 @@ Console에서 [Contents] > [Image]를 선택한 후 [그림 1]의 [상품이용]
 대소문자를 구별하여 검색이 되며, 추후에 대소문자 구별 없이 검색할 수 있게 개선할 예정입니다.  
 입력 예) sample   
 결과 예) sample.gif, sample_2.gif, sample 3.gif, sample_샘플_100x100.png  
+
+### 참고 자료
+- 위키피디아: https://ko.wikipedia.org/wiki/앤티에일리어싱
