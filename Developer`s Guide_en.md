@@ -52,7 +52,7 @@ API List
 
 | Method | Request Url                                                           |
 |--------|-----------------------------------------------------------------------|
-| POST   | https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/folders |
+| POST   | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/folders |
 
 \[Request Header\]
 
@@ -80,7 +80,7 @@ Transfer as json object.
 \# Create a subfolder named myfolder in the route folder.
 \# Change {secretKey} and {appKey} to confirmed values in the Web Console.
 
-    curl ‐X POST "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders" \
+    curl ‐X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders" \
     ‐H "Authorization: {secretKey}" \
     ‐H "Content‐Type: application/json" \
     ‐data "{'path': '/myfolder'}"
@@ -124,7 +124,7 @@ Transfer as json object.
 
 | Method | Request Url                                                           |
 |--------|-----------------------------------------------------------------------|
-| GET    | https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/folders |
+| GET    | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/folders |
 
 \[Request Header\]
 
@@ -149,7 +149,7 @@ Transfer as json object.
 \# Look up a subfolder of /myfolder and files.
 \# Change {secretKey} and {appKey} to confirmed values in the Web Console.
 
-    curl ‐X GET "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders?basepath=/myfolder" \
+    curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders?basepath=/myfolder" \
     ‐H "Authorization: {secretKey}
 
 \[Response Field\]
@@ -263,7 +263,7 @@ Transfer as json object.
 
 | Method | Request Url                                                              |
 |--------|--------------------------------------------------------------------------|
-| GET    | https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/properties |
+| GET    | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/properties |
 
 \[Request Header\]
 
@@ -283,7 +283,7 @@ Transfer as json object.
 \# Look up folder property of myfolder.
 \# Change {secretKey} and {appKey} to confirmed values in the Web Console.
 
-    curl ‐X GET "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/properties?path=/myfolder" \
+    curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/properties?path=/myfolder" \
     ‐H "Authorization: {secretKey}"
 
 \[Response Field\]
@@ -329,7 +329,7 @@ Transfer as json object.
 
 | Method | Request Url                                                          |
 |--------|----------------------------------------------------------------------|
-| PUT    | https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images |
+| PUT    | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images |
 
 \[Request Header\]
 
@@ -358,7 +358,7 @@ Insert Binary Data of the image file.
 \# Upload sample.png image in /myfolder folder.
 \# Change {secretKey} and {appKey} to confirmed values in the Web Console.
 
-    curl ‐X PUT "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images?
+    curl ‐X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images?
     path=/myfolder/sample.png&overwrite=true" \
     ‐H "Authorization: {secretKey}" \
     ‐H "Content‐Type:application/octet‐stream" \
@@ -461,7 +461,7 @@ Insert Binary Data of the image file.
 
 | Method | Request Url                                                          |
 |--------|----------------------------------------------------------------------|
-| POST   | https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images |
+| POST   | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images |
 
 \[Request Header\]
 
@@ -497,7 +497,7 @@ In case of a request with additional image operation ID, the user can create an 
 
 \# Upload left.png, right.png image in /myfolder/banner folder. \# Change {secretKey} and {appKey} to confirmed values in the Web Console.
 
-    curl ‐X POST "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images" \
+    curl ‐X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images" \
     ‐H "Authorization: {secretKey}" \
     ‐F "params={'basepath': '/myfolder/banner', 'overwrite': true}" \
     ‐F "files=@left.png" \
@@ -654,7 +654,7 @@ In case of a request with additional image operation ID, the user can create an 
 
 | Method | Request Url                                                               |
 |--------|---------------------------------------------------------------------------|
-| DELETE | https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images/sync |
+| DELETE | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images/sync |
 
 \[Request Header\]
 
@@ -683,7 +683,7 @@ Use at least one of 'folderId' and 'fileId' as a required parameter.
 
 <!-- -->
 
-    curl ‐X DELETE "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images/sync?fileId=9cf11176‐
+    curl ‐X DELETE "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images/sync?fileId=9cf11176‐
     045c‐4708‐8dbd‐35633f029a91" \
     ‐H "Authorization:{secretKey}"
     [Response Sample]
@@ -701,7 +701,7 @@ Use at least one of 'folderId' and 'fileId' as a required parameter.
 
 | Method | Request Url                                                                |
 |--------|----------------------------------------------------------------------------|
-| DELETE | https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images/async |
+| DELETE | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images/async |
 
 \[Request Header\]
 
@@ -730,7 +730,7 @@ Use at least one of 'folderIds' and 'fileIds' as a required parameter.
 
 <!-- -->
 
-    curl ‐X DELETE "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images/async?
+    curl ‐X DELETE "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images/async?
     fileIds=5fa8ce52‐d066‐490c‐85dd‐f8cef181dd28,96f726bd‐93e4‐4f7c‐ad55‐56e85aa323a8" \
     ‐H "Authorization:{secretKey}"
     [Response Sample]
@@ -754,7 +754,7 @@ Provides thumbnail size, black and white filter, crop (square and circular)
 
 | Method | Request Url                                                                            |
 |--------|----------------------------------------------------------------------------------------|
-| PUT    | https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
+| PUT    | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
 
 \[Request Header\]
 
@@ -841,7 +841,7 @@ Transfer as json object.
 
 <!-- -->
 
-    curl ‐X PUT "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100" \
+    curl ‐X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100" \
     ‐H "Authorization:{secretKey}" \
     ‐H "Content‐Type: application/json" \
     ‐‐data "{'description': '', 'realtimeService': true, 'data': [{'templateOperationId': 'resize_max_fit',
@@ -910,7 +910,7 @@ Transfer as json object.
 
 | Method | Request Url                                                              |
 |--------|--------------------------------------------------------------------------|
-| GET    | https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations |
+| GET    | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations |
 
 \[Request Header\]
 
@@ -937,7 +937,7 @@ Transfer as json object.
 
 <!-- -->
 
-    curl ‐X GET "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations?template=false" \
+    curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations?template=false" \
     ‐H "Authorization:{secretKey}"
 
 \[Response Sample\]
@@ -1018,7 +1018,7 @@ Transfer as json object.
 
 | Method | Request Url                                                                            |
 |--------|----------------------------------------------------------------------------------------|
-| GET    | https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
+| GET    | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
 
 \[Request Header\]
 
@@ -1041,7 +1041,7 @@ Transfer as json object.
 
 <!-- -->
 
-    curl ‐X GET "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100" \
+    curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100" \
     ‐H "Authorization:{secretKey}"
 
 \[Response Sample\]
@@ -1106,7 +1106,7 @@ Transfer as json object.
 
 | Method | Request Url                                                                            |
 |--------|----------------------------------------------------------------------------------------|
-| DELETE | https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
+| DELETE | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations/{operationId} |
 
 \[Request Header\]
 
@@ -1129,7 +1129,7 @@ Transfer as json object.
 
 <!-- -->
 
-    curl ‐X DELETE "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100" \
+    curl ‐X DELETE "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100" \
     ‐H "Authorization:{secretKey}"
     [Response Sample]
     {
@@ -1146,7 +1146,7 @@ Transfer as json object.
 
 | Method | Request Url                                                                   |
 |--------|-------------------------------------------------------------------------------|
-| POST   | https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations‐exec |
+| POST   | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations‐exec |
 
 \[Request Header\]
 
@@ -1179,7 +1179,7 @@ Transfer as json object.
 
 <!-- -->
 
-    curl ‐X POST "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations‐exec" \
+    curl ‐X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations‐exec" \
     ‐H "Authorization:{secretKey}" \
     ‐H "Content‐Type: application/json" \
     ‐‐data "{'basepath': '/myfolder', 'operationIds': ['100x100'], 'filepaths': ['/myfolder/left.png',
@@ -1282,7 +1282,7 @@ Transfer as json object.
 
 | Method | Request Url                                                         |
 |--------|---------------------------------------------------------------------|
-| GET    | https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/users |
+| GET    | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/users |
 
 \[Request Header\]
 
@@ -1304,7 +1304,7 @@ Transfer as json object.
 
 <!-- -->
 
-    curl ‐X GET "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users" \
+    curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users" \
     ‐H "Authorization:{secretKey}"
 
 \[Response Sample\]
@@ -1340,7 +1340,7 @@ Transfer as json object.
 
 | Method | Request Url                                                         |
 |--------|---------------------------------------------------------------------|
-| PUT    | https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/users |
+| PUT    | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/users |
 
 \[Request Header\]
 
@@ -1371,7 +1371,7 @@ Transfer as json object.
 
 <!-- -->
 
-    curl ‐X PUT "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users" \
+    curl ‐X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users" \
     ‐H "Authorization:{secretKey}" \
     ‐H "Content‐Type: application/json" \
     ‐‐data "{'realtimeService': false}"
@@ -1392,7 +1392,7 @@ Transfer as json object.
 
 | Method | Request Url                                                                    |
 |--------|--------------------------------------------------------------------------------|
-| GET    | https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/queues/{queueId} |
+| GET    | https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/queues/{queueId} |
 
 \[Request Header\]
 
@@ -1415,7 +1415,7 @@ Transfer as json object.
 
 <!-- -->
 
-    curl ‐X GET "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/queues/6691a01a‐4585‐4e26‐989c‐8ef25dd627a0" \
+    curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/queues/6691a01a‐4585‐4e26‐989c‐8ef25dd627a0" \
     ‐H "Authorization:{secretKey}"
 
 \[Response Sample\]
@@ -1491,5 +1491,3 @@ Response Code, Message
 | 23001      | FAIL\_TO\_UPLOAD\_IMAGES       | -                                                     | A problem occurred while uploading the image.                           | -                                                                                                                           |
 | 30004      | INVALID\_APPKEY                | -                                                     | Verification information is not valid.                                  | App Key or Secret Key error                                                                                                 |
 | 30005      | INVALID\_USER                  | -                                                     | User information is not valid.                                          | -                                                                                                                           |
-
-
