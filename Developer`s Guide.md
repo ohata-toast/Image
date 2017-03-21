@@ -1494,6 +1494,7 @@ Response Code, Message
 |0|	SUCCESS|	Success|	OOO 성공|	성공|
 |1|	PARTIAL_SUCCESS P|	Partial Success|	부분 성공|	부분 성공<br/>리스트 중에 일부는 성공, 일부는 실패 (성공 건수가 0 이라도 부분 성공임)|
 |–1|	FAIL|	Unknown error|	알 수 없는 에러가 발생했습니다.|	내부 에러 발생시|
+|403|	NOT_ALLOWED|	Not Allowed.|	혀용되지 않은 요청입니다.| -|
 |404|	NOT_FOUND|	Please check your API Url, Parameters or HTTP Method.|	API URL, 파라미터, HTTP Method 를 확인하십시요| -|
 |10001|	INVALID_PARAMETERS|	One or more parameters were invalid.|	파라미터를 확인해주세요.|	파라미터 값을 잘못 보냈거나, 누락했을 때|
 |10002|	INVALID_FILES| -|업로드할 파일이 없거나, 유효하지 않은 파일입니다.|	업로드할 파일이 없거나, 깨진 이미지 일 때|
@@ -1503,6 +1504,7 @@ Response Code, Message
 |11004|	UPLOAD_SIZE_LIMIT| -|한번에 업로드 할 수있는 용량을 초과 했습니다(최대12Mbytes).|	업로드 파일 용량 초과 (1개 파일 max: , 1회 요청 max: )|
 |11050|	INVALID_FILENAME|	Invalid Characters in File or Folder Name|	파일과 폴더 이름에는 다음 문자는 사용할 수 없습니다. \ / :? * " &brvbar;|	파일/폴더명 validation ( / \ : ? * " &brvbar;)|
 |11051|	INVALID_URL| -|URL 업로드 지원포트는 80, 443입니다.|	URL을 통한 업로드 시 URL 지원포트|
+|11060|	FILENAME_EMPTY| -|폴더 또는 파일 이름을 입력해야 합니다.|	-|
 |20000|	FOLDER_DUPLICATED_NAME|	There is already a folder at the given destination|	동일한 이름의 폴더가 있습니다.|	중복된 폴더명으로 생성 또는 rename시|
 |20001|	FOLDER_NOT_EXISTS|	No file was found at the specified path.|	해당 경로에 파일 또는 폴더가 없습니다.|	해당경로에 파일/폴더가 없을 때e.g. 삭제, 다운로드|
 |20002|	INVALID_BASE_PATH| -|상위 폴더가 존재하지 않습니다.|	파일 업로드 및 폴더 생성시, 상위 폴더가 삭제 중이거나 없을 경우|
@@ -1514,5 +1516,8 @@ Response Code, Message
 |21031|	FAIL_TO_CREATE_ROOT_FOLDER| -|Root 폴더 생성을 실패하였습니다.| -|
 |22001|	FAIL_TO_CREATE_FOLDER| -|폴더 생성을 실패하였습니다.| -|
 |23001|	FAIL_TO_UPLOAD_IMAGES| -|이미지 업로드중에 문제가 발생하였습니다.| -|
+|24001|	FAIL_TO_SWIFT| -|	스토리지 접근이 불가능합니다.| -|
 |30004|	INVALID_APPKEY| -|인증정보가 유효하지 않습니다.|	App Key 또는 Secret Key 에러|
 |30005|	INVALID_USER| -|사용자 정보가 유효하지 않습니다.	| -|
+|40000|	OPERATION_NOT_ALLOWED| -|	오퍼레이션 권한이 없습니다.| -|
+|40001|	OPERATION_FAIL| -|	이미지 오퍼레이션 처리에 실패했습니다.| -|
