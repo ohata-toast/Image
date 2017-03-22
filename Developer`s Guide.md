@@ -49,7 +49,7 @@ SecreKey는 인증 처리에 필요하며, 모든 API 요청시에 Request Heade
 
 |Method|	Request Url|
 |---|---|
-|POST|	https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/folders|
+|POST|	https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/folders|
 
 [Request Header]
 
@@ -78,7 +78,7 @@ json 객체로 전달합니다.
 \# {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.  
 
 ```
-curl ‐X POST "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders" \
+curl ‐X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders" \
 ‐H "Authorization: {secretKey}" \
 ‐H "Content‐Type: application/json" \
 ‐data "{'path': '/myfolder'}"
@@ -125,7 +125,7 @@ curl ‐X POST "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/
 
 |Method|	Request Url|
 |---|---|
-|GET|	https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/folders|
+|GET|	https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/folders|
 
 [Request Header]
 
@@ -151,7 +151,7 @@ curl ‐X POST "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/
 \# {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.  
 
 ```
-curl ‐X GET "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders?basepath=/myfolder" \
+curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders?basepath=/myfolder" \
 ‐H "Authorization: {secretKey}
 ```
 
@@ -268,7 +268,7 @@ curl ‐X GET "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/f
 
 |Method|	Request Url|
 |---|---|
-|GET|	https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/properties|
+|GET|	https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/properties|
 
 [Request Header]
 
@@ -289,7 +289,7 @@ curl ‐X GET "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/f
 \# {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.  
 
 ```
-curl ‐X GET "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/properties?path=/myfolder" \
+curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/properties?path=/myfolder" \
 ‐H "Authorization: {secretKey}"
 ```
 
@@ -338,7 +338,7 @@ curl ‐X GET "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/p
 
 |Method|	Request Url|
 |---|---|
-|PUT|	https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images|
+|PUT|	https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images|
 
 [Request Header]
 
@@ -368,7 +368,7 @@ curl ‐X GET "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/p
 \# {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.  
 
 ```
-curl ‐X PUT "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images?
+curl ‐X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images?
 path=/myfolder/sample.png&overwrite=true" \
 ‐H "Authorization: {secretKey}" \
 ‐H "Content‐Type:application/octet‐stream" \
@@ -474,7 +474,7 @@ path=/myfolder/sample.png&overwrite=true" \
 
 |Method|	Request Url|
 |---|---|
-|POST|	https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images|
+|POST|	https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images|
 
 [Request Header]
 
@@ -512,7 +512,7 @@ path=/myfolder/sample.png&overwrite=true" \
 \# {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.
 
 ```
-curl ‐X POST "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images" \
+curl ‐X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images" \
 ‐H "Authorization: {secretKey}" \
 ‐F "params={'basepath': '/myfolder/banner', 'overwrite': true}" \
 ‐F "files=@left.png" \
@@ -672,7 +672,7 @@ curl ‐X POST "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/
 
 |Method|	Request Url|
 |---|---|
-|DELETE|	https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images/sync|
+|DELETE|	https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images/sync|
 
 [Request Header]
 
@@ -698,7 +698,7 @@ curl ‐X POST "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/
 - {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.
 
 ```
-curl ‐X DELETE "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images/sync?fileId=9cf11176‐
+curl ‐X DELETE "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images/sync?fileId=9cf11176‐
 045c‐4708‐8dbd‐35633f029a91" \
 ‐H "Authorization:{secretKey}"
 [Response Sample]
@@ -717,7 +717,7 @@ curl ‐X DELETE "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey
 
 |Method|	Request Url|
 |---|---|
-|DELETE|	https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images/async|
+|DELETE|	https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/images/async|
 
 [Request Header]
 
@@ -743,7 +743,7 @@ curl ‐X DELETE "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey
 - {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.
 
 ```
-curl ‐X DELETE "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images/async?
+curl ‐X DELETE "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images/async?
 fileIds=5fa8ce52‐d066‐490c‐85dd‐f8cef181dd28,96f726bd‐93e4‐4f7c‐ad55‐56e85aa323a8" \
 ‐H "Authorization:{secretKey}"
 [Response Sample]
@@ -767,7 +767,7 @@ fileIds=5fa8ce52‐d066‐490c‐85dd‐f8cef181dd28,96f726bd‐93e4‐4f7c‐ad
 
 |Method|	Request Url|
 |---|---|
-|PUT|	https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations/{operationId}|
+|PUT|	https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations/{operationId}|
 
 [Request Header]
 
@@ -859,7 +859,7 @@ json 객체로 전달합니다.
 - {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.
 
 ```
-curl ‐X PUT "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100" \
+curl ‐X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100" \
 ‐H "Authorization:{secretKey}" \
 ‐H "Content‐Type: application/json" \
 ‐‐data "{'description': '', 'realtimeService': true, 'data': [{'templateOperationId': 'resize_max_fit',
@@ -931,7 +931,7 @@ false}}]}"
 
 |Method|	Request Url|
 |---|---|
-|GET|	https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations|
+|GET|	https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations|
 
 [Request Header]
 
@@ -956,7 +956,7 @@ false}}]}"
 - {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.
 
 ```
-curl ‐X GET "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations?template=false" \
+curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations?template=false" \
 ‐H "Authorization:{secretKey}"
 ```
 
@@ -1040,7 +1040,7 @@ curl ‐X GET "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/o
 
 |Method|	Request Url|
 |---|---|
-|GET|	https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations/{operationId}|
+|GET|	https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations/{operationId}|
 
 [Request Header]
 
@@ -1061,7 +1061,7 @@ curl ‐X GET "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/o
 - {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.
 
 ```
-curl ‐X GET "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100" \
+curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100" \
 ‐H "Authorization:{secretKey}"
 ```
 
@@ -1129,7 +1129,7 @@ curl ‐X GET "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/o
 
 |Method|	Request Url|
 |---|---|
-|DELETE|	https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations/{operationId}|
+|DELETE|	https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations/{operationId}|
 
 [Request Header]
 
@@ -1150,7 +1150,7 @@ curl ‐X GET "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/o
 - {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.
 
 ```
-curl ‐X DELETE "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100" \
+curl ‐X DELETE "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100" \
 ‐H "Authorization:{secretKey}"
 [Response Sample]
 {
@@ -1168,7 +1168,7 @@ curl ‐X DELETE "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey
 
 |Method|	Request Url|
 |---|---|
-|POST|	https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations‐exec|
+|POST|	https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/operations‐exec|
 
 [Request Header]
 
@@ -1199,7 +1199,7 @@ json 객체로 전달합니다.
 - {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.
 
 ```
-curl ‐X POST "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations‐exec" \
+curl ‐X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations‐exec" \
 ‐H "Authorization:{secretKey}" \
 ‐H "Content‐Type: application/json" \
 ‐‐data "{'basepath': '/myfolder', 'operationIds': ['100x100'], 'filepaths': ['/myfolder/left.png',
@@ -1305,7 +1305,7 @@ curl ‐X POST "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/
 
 |Method|	Request Url|
 |---|---|
-|GET|	https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/users|
+|GET|	https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/users|
 
 [Request Header]
 
@@ -1325,7 +1325,7 @@ curl ‐X POST "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/
 - {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.
 
 ```
-curl ‐X GET "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users" \
+curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users" \
 ‐H "Authorization:{secretKey}"
 ```
 
@@ -1364,7 +1364,7 @@ curl ‐X GET "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/u
 
 |Method|	Request Url|
 |---|---|
-|PUT|	https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/users|
+|PUT|	https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/users|
 
 [Request Header]
 
@@ -1393,7 +1393,7 @@ json 객체로 전달합니다.
 - {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.
 
 ```
-curl ‐X PUT "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users" \
+curl ‐X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users" \
 ‐H "Authorization:{secretKey}" \
 ‐H "Content‐Type: application/json" \
 ‐‐data "{'realtimeService': false}"
@@ -1417,7 +1417,7 @@ curl ‐X PUT "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/u
 
 |Method|	Request Url|
 |---|---|
-|GET|	https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appkey}/queues/{queueId}|
+|GET|	https://api-image.cloud.toast.com/image/v2.0/appkeys/{appkey}/queues/{queueId}|
 
 [Request Header]
 
@@ -1438,7 +1438,7 @@ curl ‐X PUT "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/u
 - {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.
 
 ```
-curl ‐X GET "https://api‐image.cloud.toast.com/image/v2.0/appkeys/{appKey}/queues/6691a01a‐4585‐4e26‐989c‐8ef25dd627a0" \
+curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/queues/6691a01a‐4585‐4e26‐989c‐8ef25dd627a0" \
 ‐H "Authorization:{secretKey}"
 ```
 
@@ -1494,6 +1494,7 @@ Response Code, Message
 |0|	SUCCESS|	Success|	OOO 성공|	성공|
 |1|	PARTIAL_SUCCESS P|	Partial Success|	부분 성공|	부분 성공<br/>리스트 중에 일부는 성공, 일부는 실패 (성공 건수가 0 이라도 부분 성공임)|
 |–1|	FAIL|	Unknown error|	알 수 없는 에러가 발생했습니다.|	내부 에러 발생시|
+|403|	NOT_ALLOWED|	Not Allowed.|	혀용되지 않은 요청입니다.| -|
 |404|	NOT_FOUND|	Please check your API Url, Parameters or HTTP Method.|	API URL, 파라미터, HTTP Method 를 확인하십시요| -|
 |10001|	INVALID_PARAMETERS|	One or more parameters were invalid.|	파라미터를 확인해주세요.|	파라미터 값을 잘못 보냈거나, 누락했을 때|
 |10002|	INVALID_FILES| -|업로드할 파일이 없거나, 유효하지 않은 파일입니다.|	업로드할 파일이 없거나, 깨진 이미지 일 때|
@@ -1503,6 +1504,7 @@ Response Code, Message
 |11004|	UPLOAD_SIZE_LIMIT| -|한번에 업로드 할 수있는 용량을 초과 했습니다(최대12Mbytes).|	업로드 파일 용량 초과 (1개 파일 max: , 1회 요청 max: )|
 |11050|	INVALID_FILENAME|	Invalid Characters in File or Folder Name|	파일과 폴더 이름에는 다음 문자는 사용할 수 없습니다. \ / :? * " &brvbar;|	파일/폴더명 validation ( / \ : ? * " &brvbar;)|
 |11051|	INVALID_URL| -|URL 업로드 지원포트는 80, 443입니다.|	URL을 통한 업로드 시 URL 지원포트|
+|11060|	FILENAME_EMPTY| -|폴더 또는 파일 이름을 입력해야 합니다.|	-|
 |20000|	FOLDER_DUPLICATED_NAME|	There is already a folder at the given destination|	동일한 이름의 폴더가 있습니다.|	중복된 폴더명으로 생성 또는 rename시|
 |20001|	FOLDER_NOT_EXISTS|	No file was found at the specified path.|	해당 경로에 파일 또는 폴더가 없습니다.|	해당경로에 파일/폴더가 없을 때e.g. 삭제, 다운로드|
 |20002|	INVALID_BASE_PATH| -|상위 폴더가 존재하지 않습니다.|	파일 업로드 및 폴더 생성시, 상위 폴더가 삭제 중이거나 없을 경우|
@@ -1514,5 +1516,8 @@ Response Code, Message
 |21031|	FAIL_TO_CREATE_ROOT_FOLDER| -|Root 폴더 생성을 실패하였습니다.| -|
 |22001|	FAIL_TO_CREATE_FOLDER| -|폴더 생성을 실패하였습니다.| -|
 |23001|	FAIL_TO_UPLOAD_IMAGES| -|이미지 업로드중에 문제가 발생하였습니다.| -|
+|24001|	FAIL_TO_SWIFT| -|	스토리지 접근이 불가능합니다.| -|
 |30004|	INVALID_APPKEY| -|인증정보가 유효하지 않습니다.|	App Key 또는 Secret Key 에러|
 |30005|	INVALID_USER| -|사용자 정보가 유효하지 않습니다.	| -|
+|40000|	OPERATION_NOT_ALLOWED| -|	오퍼레이션 권한이 없습니다.| -|
+|40001|	OPERATION_FAIL| -|	이미지 오퍼레이션 처리에 실패했습니다.| -|
