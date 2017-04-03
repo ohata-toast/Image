@@ -1545,7 +1545,7 @@ Response Code, Message
 |11002|	FILENAME_LENGTH_LIMIT| -|파일과 폴더 이름의 최소 길이는 2자 최대 길이는 255자입니다.|	파일/폴더명 길이 제한 (2 ~ 255)­ N드라이브: 80자, dropbox: 255자|
 |11003|	FILE_COUNT_LIMIT| -|요청할 수 있는 파일과 폴더의 최대 개수는 10000개 입니다.|	삭제와 목록 조회 등으로 요청한파일과 폴더 개수가 많을때 (기본: 100개, max: 10000개)|
 |11004|	UPLOAD_SIZE_LIMIT| -|한번에 업로드 할 수있는 용량을 초과 했습니다(최대12Mbytes).|	업로드 파일 용량 초과 (1개 파일 max: , 1회 요청 max: )|
-|11050|	INVALID_FILENAME|	Invalid Characters in File or Folder Name|	파일과 폴더 이름에는 다음 문자는 사용할 수 없습니다. \ / :? * " &brvbar;|	파일/폴더명 validation ( / \ : ? * " &brvbar;)|
+|11050|	INVALID_FILENAME|	Invalid Characters in File or Folder Name|	파일과 폴더 이름에는 다음 문자는 사용할 수 없습니다. ~ \ / :? * " &brvbar;|	파일/폴더명 validation ( ~ / \ : ? * " &brvbar;)|
 |11051|	INVALID_URL| -|URL 업로드 지원포트는 80, 443입니다.|	URL을 통한 업로드 시 URL 지원포트|
 |11060|	FILENAME_EMPTY| -|폴더 또는 파일 이름을 입력해야 합니다.|	-|
 |20000|	FOLDER_DUPLICATED_NAME|	There is already a folder at the given destination|	동일한 이름의 폴더가 있습니다.|	중복된 폴더명으로 생성 또는 rename시|
