@@ -219,7 +219,7 @@ curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/fol
 ```
 {
 	"header": {
-    // 생략
+    	// 생략
     },
 	"paging": {
         "page": 1,
