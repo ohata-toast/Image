@@ -250,8 +250,10 @@ curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/fol
 	        "imageProperty": {
 	            "width": 90,
 	            "height": 90,
-                "lat": null,
-                "lng": null
+	            "coordinate": {
+	                "lat": null,
+	                "lng": null
+                }
             },
             "createdAt": "2016‐02‐26T15:56:50+0900"
         },
@@ -446,8 +448,10 @@ path=/myfolder/sample.png&overwrite=true" \
         "imageProperty": {
 	        "width": 200,
 	        "height": 150,
-            "lat": null,
-            "lng": null
+            "coordinate": {
+                "lat": null,
+                "lng": null
+            }
         },
         "createdAt": "2016‐02‐26T16:38:11+0900"
     },
@@ -606,8 +610,10 @@ curl ‐X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/im
             "imageProperty": {
                 "width": 60,
                 "height": 60,
-                "lat": null,
-                "lng": null
+	            "coordinate": {
+	                "lat": null,
+	                "lng": null
+                }
             },
             "createdAt": "2016‐02‐26T16:56:27+0900"
 	        },
@@ -638,8 +644,10 @@ curl ‐X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/im
             "imageProperty": {
                 "width": 1440,
                 "height": 2560,
-                "lat": null,
-                "lng": null
+	            "coordinate": {
+	                "lat": null,
+	                "lng": null
+                }
 	        },
     	    "createdAt": "2016‐02‐26T16:56:28+0900"
         	},
