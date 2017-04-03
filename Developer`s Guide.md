@@ -33,7 +33,7 @@ SecreKey는 인증 처리에 필요하며, 모든 API 요청시에 Request Heade
 
 ```
 {
-"header": {
+	"header": {
         "isSuccessful": false,
         "resultCode": 404,
         "resultMessage": "API URL, HTTP Method를 확인하십시요."
@@ -218,16 +218,16 @@ curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/fol
 
 ```
 {
-"header": {
+	"header": {
     // 생략
     },
-        "paging": {
+	"paging": {
         "page": 1,
         "rows": 100,
         "totalFolderCount": 1,
         "totalFileCount": 1
     },
-        "folders": [
+	"folders": [
         {
         "isFolder": true,
         "id": "5b6ad839‐a920‐4b88‐895d‐64ffc3f4d89a",
@@ -236,21 +236,20 @@ curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/fol
         "updatedAt": "2016‐02‐26T15:57:06+0900"
         }
     ],
-        "files": [
+	"files": [
         {
-        "isFolder": false,
-        "id": "69528a77‐0cc2‐4407‐a83d‐ea4aacbe207f",
-        "url": "http://image.toast.com/aaaaaag/myfolder/toast.png",
-        "name": "toast.png",
-        "path": "/myfolder/toast.png",
-        "bytes": 10173,
-        "createdBy": "U",
-        "updatedAt": "2016‐02‐26T15:57:14+0900",
-        "operationId": "",
-        "imageProperty": {
-            "width": 90,
-            "height": 90,
-            "coordinate": {
+	        "isFolder": false,
+	        "id": "69528a77‐0cc2‐4407‐a83d‐ea4aacbe207f",
+	        "url": "http://image.toast.com/aaaaaag/myfolder/toast.png",
+	        "name": "toast.png",
+	        "path": "/myfolder/toast.png",
+	        "bytes": 10173,
+	        "createdBy": "U",
+	        "updatedAt": "2016‐02‐26T15:57:14+0900",
+	        "operationId": "",
+	        "imageProperty": {
+	            "width": 90,
+	            "height": 90,
                 "lat": null,
                 "lng": null
             },
@@ -316,8 +315,8 @@ curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/pro
 
 ```
 {
-"header": {
-    // 생략
+	"header": {
+    	// 생략
     },
     "folder": {
         "isFolder": true,
@@ -431,23 +430,22 @@ path=/myfolder/sample.png&overwrite=true" \
 
 ```
 {
-        "header": {
+    "header": {
         // 생략
     },
-"file": {
-    "isFolder": false,
-    "id": "9cf11176‐045c‐4708‐8dbd‐35633f029a91",
-    "url": "http://image.toast.com/aaaaach/myfolder/sample.png",
-    "name": "sample.png",
-    "path": "/myfolder/sample.png",
-    "bytes": 54684,
-    "createdBy": "U",
-    "updatedAt": "2016‐02‐26T16:38:34+0900",
-    "operationId": "",
+	"file": {
+	    "isFolder": false,
+	    "id": "9cf11176‐045c‐4708‐8dbd‐35633f029a91",
+	    "url": "http://image.toast.com/aaaaach/myfolder/sample.png",
+	    "name": "sample.png",
+	    "path": "/myfolder/sample.png",
+	    "bytes": 54684,
+	    "createdBy": "U",
+	    "updatedAt": "2016‐02‐26T16:38:34+0900",
+	    "operationId": "",
         "imageProperty": {
-        "width": 200,
-        "height": 150,
-            "coordinate": {
+	        "width": 200,
+	        "height": 150,
             "lat": null,
             "lng": null
         },
@@ -465,8 +463,7 @@ path=/myfolder/sample.png&overwrite=true" \
             "name": "sample_100x100.png",
             "path": "/myfolder/sample_100x100.png"
         }
-     ]
-    }
+    ]
 }
 ```
 
@@ -591,11 +588,11 @@ curl ‐X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/im
 
 ```
 {
-            "header": {
-            // 생략
-        },
-        "errors": [],
-        "successes": [
+    "header": {
+        // 생략
+    },
+    "errors": [],
+    "successes": [
         {
             "isFolder": false,
             "id": "5fa8ce52‐d066‐490c‐85dd‐f8cef181dd28",
@@ -609,25 +606,24 @@ curl ‐X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/im
             "imageProperty": {
                 "width": 60,
                 "height": 60,
-                "coordinate": {
                 "lat": null,
                 "lng": null
             },
             "createdAt": "2016‐02‐26T16:56:27+0900"
-        },
-        "queues": [
-            {
-                "queueId": "bef1736f‐6637‐459e‐ae10‐ac0961ebf59c",
-                "queueType": "image",
-                "status": "W",
-                "tryCount": 0,
-                "queuedAt": "2016‐02‐26T16:56:29+0900",
-                "operationId": "100x100",
-                "url": "http://image.toast.com/aaaaach/myfolder/banner/left_100x100.png",
-                "name": "left_100x100.png",
-                "path": "/myfolder/banner/left_100x100.png"
-                }
-            ]
+	        },
+	        "queues": [
+	            {
+	                "queueId": "bef1736f‐6637‐459e‐ae10‐ac0961ebf59c",
+	                "queueType": "image",
+	                "status": "W",
+	                "tryCount": 0,
+	                "queuedAt": "2016‐02‐26T16:56:29+0900",
+	                "operationId": "100x100",
+	                "url": "http://image.toast.com/aaaaach/myfolder/banner/left_100x100.png",
+	                "name": "left_100x100.png",
+	                "path": "/myfolder/banner/left_100x100.png"
+	            }
+	        ]
         },
         {
             "isFolder": false,
@@ -642,25 +638,24 @@ curl ‐X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/im
             "imageProperty": {
                 "width": 1440,
                 "height": 2560,
-                "coordinate": {
                 "lat": null,
                 "lng": null
-          },
-         "createdAt": "2016‐02‐26T16:56:28+0900"
-        },
-        "queues": [
-            {
-                "queueId": "6691a01a‐4585‐4e26‐989c‐8ef25dd627a0",
-                "queueType": "image",
-                "status": "W",
-                "tryCount": 0,
-                "queuedAt": "2016‐02‐26T16:56:29+0900",
-                "operationId": "100x100",
-                "url": "http://image.toast.com/aaaaach/myfolder/banner/right_100x100.png",
-                "name": "right_100x100.png",
-                "path": "/myfolder/banner/right_100x100.png"
-            }
-        ]
+	        },
+    	    "createdAt": "2016‐02‐26T16:56:28+0900"
+        	},
+        	"queues": [
+	            {
+	                "queueId": "6691a01a‐4585‐4e26‐989c‐8ef25dd627a0",
+	                "queueType": "image",
+	                "status": "W",
+	                "tryCount": 0,
+	                "queuedAt": "2016‐02‐26T16:56:29+0900",
+	                "operationId": "100x100",
+	                "url": "http://image.toast.com/aaaaach/myfolder/banner/right_100x100.png",
+	                "name": "right_100x100.png",
+	                "path": "/myfolder/banner/right_100x100.png"
+	            }
+	        ]
         }
     ]
 }
@@ -698,8 +693,8 @@ curl ‐X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/im
 - {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.
 
 ```
-curl ‐X DELETE "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images/sync?fileId=9cf11176‐
-045c‐4708‐8dbd‐35633f029a91" \
+curl ‐X DELETE "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images/sync?
+fileId=9cf11176‐045c‐4708‐8dbd‐35633f029a91" \
 ‐H "Authorization:{secretKey}"
 [Response Sample]
 {
@@ -759,7 +754,7 @@ fileIds=5fa8ce52‐d066‐490c‐85dd‐f8cef181dd28,96f726bd‐93e4‐4f7c‐ad
 ## 이미지 오퍼레이션
 
 이미지 오퍼레이션 API를 통해 다양한 썸네일을 생성할 수 있습니다.  
-썸네일 크기, 흑백 필터, 크롭(사각, 원형) 제공  
+썸네일 크기, 흑백 필터, 크롭(Retangle, Circle, Slice) 제공  
 
 ### 이미지 오퍼레이션 생성 및 수정
 
@@ -796,60 +791,72 @@ json 객체로 전달합니다.
 [data 옵션]
 
 [썸네일 크기]
-
 ```
 {
-        templateOperationId: "resize_max_fit", // (required) 기반이 되는 템플릿 ID(resize_fixed, resize_min_fit,
-    resize_max_fit)
-        option: {
-            width: int, // (required) 가로 사이즈
-            height: int, // (required) 세로 사이즈
-            quality: double, // (optional, default: 75) 품질, 1~100(100 : 원본 품질)
-            shrinkLargerOnly: boolean, // (optional, default: true) 원본 이상으로 확대 불가 여부
-            keepAnimation: boolean, // (optional, default: false) GIF 애니메이션 유지 여부
-            keepExif: boolean, // (optional, default: true) 메타정보 유지 여부
-            autoOrient: boolean, // (optional, default: false) Orientation 정보를 기준으로 회전 여부
-            targetExtension: string // (optional, default: null) 출력 포맷(확장자)
-        }
+    templateOperationId: "resize_max_fit", // (required) 기반이 되는 템플릿 ID
+    		// (resize_fixed, resize_min_fit, resize_max_fit)
+    option: {
+        width: int, // (required) 가로 사이즈
+        height: int, // (required) 세로 사이즈
+        quality: double, // (optional, default: 75) 품질, 1~100(100 : 원본 품질)
+        shrinkLargerOnly: boolean, // (optional, default: true) 원본 이상으로 확대 불가 여부
+        keepAnimation: boolean, // (optional, default: true) GIF 애니메이션 유지 여부
+        keepExif: boolean, // (optional, default: true) 메타정보 유지 여부
+        autoOrient: boolean, // (optional, default: false) Orientation 정보를 기준으로 회전 여부
+        targetExtension: string // (optional, default: null) 출력 포맷(확장자)
     }
-```
-
-[사각 크롭]
-
-```
-{
-        templateOperationId: "rectangle", // (required) 기반이 되는 템플릿 ID
-        option: {
-            gravity: string, // (optional, default: "Center") 기준 위치 (NorthWest, North, NorthEast, West,
-        Center, East, SouthWest, South, SouthEast)
-            offsetX: int, // (optional, default: 0) 기준 위치 이동 (‐ 값 가능: 반대로 이동)
-            offsetY: int, // (optional, default: 0) 기준 위치 이동 (‐ 값 가능: 반대로 이동)
-            width: int, // (required) 가로 사이즈
-            height: int // (required) 세로 사이즈
-        }
-}
-```
-
-[원형 크롭]
-
-```
-{
-        templateOperationId: "circle", // (required) 기반이 되는 템플릿 ID
-        option: {
-            gravity: string, // (optional, default: "Center") 기준 위치 (NorthWest, North, NorthEast, West,
-        Center, East, SouthWest, South, SouthEast)
-            offsetX: int, // (optional, default: 0) 기준 위치 이동 (‐ 값 가능: 반대로 이동)
-            offsetY: int, // (optional, default: 0) 기준 위치 이동 (‐ 값 가능: 반대로 이동)
-            radius: int // (required) 반지름
-            }
 }
 ```
 
 [흑백 필터]
 ```
 {
-        templateOperationId: "gray", // (required) 기반이 되는 템플릿 ID
-        option: {} // (required) 옵션 없음
+    templateOperationId: "gray", // (required) 기반이 되는 템플릿 ID
+    option: {} // (required) 옵션 없음
+}
+```
+
+[Retangle 크롭]
+```
+{
+    templateOperationId: "rectangle", // (required) 기반이 되는 템플릿 ID
+    option: {
+        gravity: string, // (optional, default: "Center") 기준 위치
+       		// (NorthWest, North, NorthEast, West, Center, East, SouthWest, South, SouthEast)
+        offsetX: int, // (optional, default: 0) 기준 위치 이동 (‐ 값 가능: 반대로 이동)
+        offsetY: int, // (optional, default: 0) 기준 위치 이동 (‐ 값 가능: 반대로 이동)
+        width: int, // (required) 가로 사이즈
+        height: int, // (required) 세로 사이즈
+        keepAnimation: boolean // (optional, default: false) GIF 애니메이션 유지 여부
+    }
+}
+```
+
+[Circle 크롭]
+```
+{
+    templateOperationId: "circle", // (required) 기반이 되는 템플릿 ID
+    option: {
+        gravity: string, // (optional, default: "Center") 기준 위치 
+        	// (NorthWest, North, NorthEast, West, Center, East, SouthWest, South, SouthEast)
+        offsetX: int, // (optional, default: 0) 기준 위치 이동 (‐ 값 가능: 반대로 이동)
+        offsetY: int, // (optional, default: 0) 기준 위치 이동 (‐ 값 가능: 반대로 이동)
+        radius: int, // (required) 반지름
+        keepAnimation: boolean // (optional, default: false) GIF 애니메이션 유지 여부
+    }
+}
+```
+
+[Slice 크롭]
+```
+{
+    templateOperationId: "slice", // (required) 기반이 되는 템플릿 ID
+    option: {
+        sliceCropType: string, // (optional, default: "vertical") 분할 방식 (vertical, horizontal)
+        sliceSize: int, // (optional, default: 0) 분할 크기
+        callbackUrl: string, // (optional, default: "") operation 실행 결과를 리턴받을 콜백 url
+        keepAnimation: boolean // (optional, default: false) GIF 애니메이션 유지 여부
+    }
 }
 ```
 
@@ -868,35 +875,34 @@ false}}]}"
 ```
 
 [Response Sample]
-
 ```
 {
-            "header": {
-            // 생략
-          },
-            "operation": {
-            "appKey": {appKey},
-            "operationId": "100x100",
-            "description": "",
-            "realtimeService": true,
-            "jobTemplate": [
-            {
-                "templateOperationId": "resize_max_fit",
-                "jobType": "ResizeJob",
-                "option": {
-                    "resizeType": "max_fit",
-                    "width": 100,
-                    "height": 100,
-                    "quality": 80,
-                    "shrinkLargerOnly": false,
-                    "keepAnimation": false,
-                    "keepExif": true,
-                    "autoOrient": true
-                    }
-                }
-            ],
-            "updatedAt": "2016‐02‐26T17:42:27+0900"
-            }
+	"header": {
+    	// 생략
+	},
+    "operation": {
+    "appKey": {appKey},
+    "operationId": "100x100",
+    "description": "",
+    "realtimeService": true,
+    "jobTemplate": [
+	    {
+	        "templateOperationId": "resize_max_fit",
+	        "jobType": "ResizeJob",
+	        "option": {
+	            "resizeType": "max_fit",
+	            "width": 100,
+	            "height": 100,
+	            "quality": 80,
+	            "shrinkLargerOnly": false,
+	            "keepAnimation": false,
+	            "keepExif": true,
+	            "autoOrient": true
+	        }
+	    }
+	],
+    "updatedAt": "2016‐02‐26T17:42:27+0900"
+    }
 }
 ```
 
@@ -964,38 +970,38 @@ curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/ope
 
 ```
 {
-            "header": {
-            // 생략
-        },
-        "paging": {
-            "page": 1,
-            "rows": 20,
-            "totalCount": 1
-        },
-        "operations": [
-            {
-                "appKey": {appKey},
-                "operationId": "100x100",
-                "description": "",
-                "realtimeService": true,
-                "jobTemplate": [
-                {
-                    "templateOperationId": "resize_max_fit",
-                    "jobType": "ResizeJob",
-                    "option": {
-                        "resizeType": "max_fit",
-                        "width": 100,
-                        "height": 100,
-                        "quality": 80,
-                        "shrinkLargerOnly": false,
-                        "keepAnimation": false,
-                        "keepExif": true,
-                        "autoOrient": true
-                    }
-                }   
-            ],
-            "updatedAt": "2016‐02‐26T17:42:27+0900"
-        }
+	"header": {
+    	// 생략
+	},
+    "paging": {
+        "page": 1,
+        "rows": 20,
+        "totalCount": 1
+    },
+    "operations": [
+        {
+            "appKey": {appKey},
+            "operationId": "100x100",
+            "description": "",
+            "realtimeService": true,
+            "jobTemplate": [
+	            {
+	                "templateOperationId": "resize_max_fit",
+	                "jobType": "ResizeJob",
+	                "option": {
+	                    "resizeType": "max_fit",
+	                    "width": 100,
+	                    "height": 100,
+	                    "quality": 80,
+	                    "shrinkLargerOnly": false,
+	                    "keepAnimation": false,
+	                    "keepExif": true,
+	                    "autoOrient": true
+	                }
+	            }   
+        	],
+        	"updatedAt": "2016‐02‐26T17:42:27+0900"
+    	}
     ]
 }
 ```
@@ -1069,31 +1075,31 @@ curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/ope
 
 ```
 {
-            "header": {
-            // 생략
-        },
-            "operation": {
-                "appKey": {appKey},
-                "operationId": "100x100",
-                "description": "",
-                "realtimeService": true,
-                "jobTemplate": [
-            {
-                "templateOperationId": "resize_max_fit",
-                "jobType": "ResizeJob",
-                "option": {
-                    "resizeType": "max_fit",
-                    "width": 100,
-                    "height": 100,
-                    "quality": 80,
-                    "shrinkLargerOnly": false,
-                    "keepAnimation": false,
-                    "keepExif": true,
-                    "autoOrient": true
-                }
+	"header": {
+    	// 생략
+	},
+    "operation": {
+        "appKey": {appKey},
+        "operationId": "100x100",
+        "description": "",
+        "realtimeService": true,
+        "jobTemplate": [
+    		{
+		        "templateOperationId": "resize_max_fit",
+		        "jobType": "ResizeJob",
+		        "option": {
+		            "resizeType": "max_fit",
+		            "width": 100,
+		            "height": 100,
+		            "quality": 80,
+		            "shrinkLargerOnly": false,
+		            "keepAnimation": false,
+		            "keepExif": true,
+		            "autoOrient": true
+		        }
             }
         ],
-    "updatedAt": "2016‐02‐26T17:42:27+0900"
+    	"updatedAt": "2016‐02‐26T17:42:27+0900"
     }
 }
 ```
@@ -1158,7 +1164,7 @@ curl ‐X DELETE "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/
         "isSuccessful": true,
         "resultCode": 0,
         "resultMessage": "성공"
-        }
+	}
 }
 ```
 
@@ -1210,51 +1216,51 @@ curl ‐X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/op
 
 ```
 {
-        "header": {
-        // 생략
-        },
-        "paging": {
-            "page": 1,
-            "rows": 20,
-            "totalCount": 1
-        },
-        "operations": [
-            {
-                "appKey": {appKey},
-                "operationId": "100x100",
-                "description": "",
-                "realtimeService": true,
-                "jobTemplate": [
-                {
-                    "templateOperationId": "resize_max_fit",
-                    "jobType": "ResizeJob",
-                    "option": {
-                        "resizeType": "max_fit",
-                        "width": 100,
-                        "height": 100,
-                        "quality": 80,
-                        "shrinkLargerOnly": false,
-                        "keepAnimation": false,
-                        "keepExif": true,
-                        "autoOrient": true
-                }
-            }
-        ],
-        "updatedAt": "2016‐02‐26T17:42:27+0900"
-    }
+    "header": {
+    	// 생략
+    },
+    "paging": {
+        "page": 1,
+        "rows": 20,
+        "totalCount": 1
+    },
+    "operations": [
+        {
+            "appKey": {appKey},
+            "operationId": "100x100",
+            "description": "",
+            "realtimeService": true,
+            "jobTemplate": [
+	            {
+	                "templateOperationId": "resize_max_fit",
+	                "jobType": "ResizeJob",
+	                "option": {
+	                    "resizeType": "max_fit",
+	                    "width": 100,
+	                    "height": 100,
+	                    "quality": 80,
+	                    "shrinkLargerOnly": false,
+	                    "keepAnimation": false,
+	                    "keepExif": true,
+	                    "autoOrient": true
+	            	}
+        		}
+    		],
+    		"updatedAt": "2016‐02‐26T17:42:27+0900"
+    	}
     ],
     "queues": [
-    {
-        "queueId": "6691a01a‐4585‐4e26‐989c‐8ef25dd627a0",
-        "queueType": "image",
-        "status": "W",
-        "tryCount": 0,
-        "queuedAt": "2016‐02‐26T16:56:29+0900",
-        "operationId": "100x100",
-        "url": "http://alpha‐image.toast.com/aaaaach/myfolder/banner/right_100x100.png",
-        "name": "right_100x100.png",
-        "path": "/myfolder/banner/right_100x100.png"
-        }
+	    {
+	        "queueId": "6691a01a‐4585‐4e26‐989c‐8ef25dd627a0",
+	        "queueType": "image",
+	        "status": "W",
+	        "tryCount": 0,
+	        "queuedAt": "2016‐02‐26T16:56:29+0900",
+	        "operationId": "100x100",
+	        "url": "http://alpha‐image.toast.com/aaaaach/myfolder/banner/right_100x100.png",
+	        "name": "right_100x100.png",
+	        "path": "/myfolder/banner/right_100x100.png"
+		}
     ]
 }
 ```
@@ -1299,6 +1305,43 @@ curl ‐X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/op
 |name|	string|	생성 될 이미지 이름|
 |path|	string|	생성 될 이미지 절대 경로|
 
+[Callback]
+
+- Slice 크롭 오퍼레이션에 Callback Url을 등록한 경우, 오퍼레이션 실행 결과를 Callback Url을 통해 받을 수 있습니다.
+
+[Callback Result Sample]
+
+```
+{
+	"header" : {
+		// 생략
+	},
+	"operationId" :  "slice-v",
+	"sourceFile" : {
+		"url" :  "http://image.toast.com/aaaajtn/vertical.jpg",
+		"name" :  "vertical.jpg",
+		"path" :  "/vertical.jpg"
+	},
+	"resultFiles" : [
+		{
+			"url" :  "http://image.toast.com/aaaajtn/vertical_slice-v_0000.jpg",
+			"name" :  "vertical_slice-v_0000.jpg",
+			"path" :  "/vertical_slice-v_0000.jpg"
+		},
+		{
+			"url" :  "http://image.toast.com/aaaajtn/vertical_slice-v_0001.jpg",
+			"name" :  "vertical_slice-v_0001.jpg",
+			"path" :  "/vertical_slice-v_0001.jpg"
+		},
+		{
+			"url" :  "http://image.toast.com/aaaajtn/vertical_slice-v_0002.jpg",
+			"name" :  "vertical_slice-v_0002.jpg",
+			"path" :  "/vertical_slice-v_0002.jpg"
+		}
+	]
+}
+```
+
 ### 사용자별 실 시간 서비스 조회
 
 [Request Url]
@@ -1333,13 +1376,13 @@ curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/use
 
 ```
 {
-        "header": {
+	"header": {
         // 생략
     },
-        "user": {
-        "appKey": {appkey},
-        "containerName": "aaaaach",
-        "realtimeService": true
+    "user": {
+	    "appKey": {appkey},
+	    "containerName": "aaaaach",
+	    "realtimeService": true
     }
 }
 ```
@@ -1403,11 +1446,11 @@ curl ‐X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/use
 
 ```
 {
-        "header": {
-            "isSuccessful": true,
-            "resultCode": 0,
-            "resultMessage": "성공"
-        }
+	"header": {
+        "isSuccessful": true,
+        "resultCode": 0,
+        "resultMessage": "성공"
+    }
 }
 ```
 
@@ -1446,22 +1489,22 @@ curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/que
 
 ```
 {
-        "header": {
-            "isSuccessful": true,
-            "resultCode": 0,
-            "resultMessage": "성공"
-        },
-        "queue": {
-            "queueId": "6691a01a‐4585‐4e26‐989c‐8ef25dd627a0",
-            "queueType": "image",
-            "status": "D",
-            "tryCount": 0,
-            "queuedAt": "2016‐02‐26T16:56:52+0900",
-            "operationId": "100x100",
-            "url": "http://image.toast.com/aaaaach/myfolder/banner/right_100x100.png",
-            "name": "right_100x100.png",
-            "path": "/myfolder/banner/right_100x100.png"
-        }
+    "header": {
+        "isSuccessful": true,
+        "resultCode": 0,
+        "resultMessage": "성공"
+    },
+    "queue": {
+        "queueId": "6691a01a‐4585‐4e26‐989c‐8ef25dd627a0",
+        "queueType": "image",
+        "status": "D",
+        "tryCount": 0,
+        "queuedAt": "2016‐02‐26T16:56:52+0900",
+        "operationId": "100x100",
+        "url": "http://image.toast.com/aaaaach/myfolder/banner/right_100x100.png",
+        "name": "right_100x100.png",
+        "path": "/myfolder/banner/right_100x100.png"
+    }
 }
 ```
 
