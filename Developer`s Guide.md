@@ -809,7 +809,7 @@ json 객체로 전달합니다.
         quality: double, // (optional, default: 75) 품질, 1~100(100 : 원본 품질)
         upDownSizeType: String, // (optional, default: downOnly) 원본 이상으로 확대/축소 불가 여부
         	// (downOnly, upOnly, upDownAll)
-        	// 기존 shrinkLargerOnly이 upDownSizeType으로 대채 됨. 호환성이 유지 되므로 기존옵션도 사용 가능 
+        	// 기존 shrinkLargerOnly이 upDownSizeType으로 대체. 호환성이 유지 되므로 기존옵션도 사용 가능 
         keepAnimation: boolean, // (optional, default: true) GIF 애니메이션 유지 여부
         keepExif: boolean, // (optional, default: true) 메타정보 유지 여부
         autoOrient: boolean, // (optional, default: false) Orientation 정보를 기준으로 회전 여부
