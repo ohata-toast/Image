@@ -807,7 +807,9 @@ json 객체로 전달합니다.
         width: int, // (required) 가로 사이즈
         height: int, // (required) 세로 사이즈
         quality: double, // (optional, default: 75) 품질, 1~100(100 : 원본 품질)
-        shrinkLargerOnly: boolean, // (optional, default: true) 원본 이상으로 확대 불가 여부
+        upDownSizeType: String, // (optional, default: downOnly) 원본 이상으로 확대/축소 불가 여부
+        	// (downOnly, upOnly, upDownAll)
+        	// 기존 shrinkLargerOnly이 upDownSizeType으로 대채 됨. 호환성이 유지 되므로 기존옵션도 사용 가능 
         keepAnimation: boolean, // (optional, default: true) GIF 애니메이션 유지 여부
         keepExif: boolean, // (optional, default: true) 메타정보 유지 여부
         autoOrient: boolean, // (optional, default: false) Orientation 정보를 기준으로 회전 여부
@@ -820,7 +822,9 @@ json 객체로 전달합니다.
 ```
 {
     templateOperationId: "gray", // (required) 기반이 되는 템플릿 ID
-    option: {} // (required) 옵션 없음
+    option: {  // (required) 옵션 없음
+    	keepAnimation: boolean // (optional, default: true) GIF 애니메이션 유지 여부
+    }
 }
 ```
 
@@ -849,8 +853,7 @@ json 객체로 전달합니다.
         	// (NorthWest, North, NorthEast, West, Center, East, SouthWest, South, SouthEast)
         offsetX: int, // (optional, default: 0) 기준 위치 이동 (‐ 값 가능: 반대로 이동)
         offsetY: int, // (optional, default: 0) 기준 위치 이동 (‐ 값 가능: 반대로 이동)
-        radius: int, // (required) 반지름
-        keepAnimation: boolean // (optional, default: false) GIF 애니메이션 유지 여부
+        radius: int // (required) 반지름
     }
 }
 ```
@@ -863,7 +866,7 @@ json 객체로 전달합니다.
         sliceCropType: string, // (optional, default: "vertical") 분할 방식 (vertical, horizontal)
         sliceSize: int, // (optional, default: 0) 분할 크기
         callbackUrl: string, // (optional, default: "") operation 실행 결과를 리턴받을 콜백 url
-        keepAnimation: boolean // (optional, default: false) GIF 애니메이션 유지 여부
+        keepAnimation: boolean // (optional, default: true) GIF 애니메이션 유지 여부
     }
 }
 ```
@@ -878,8 +881,8 @@ curl ‐X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/ope
 ‐H "Authorization:{secretKey}" \
 ‐H "Content‐Type: application/json" \
 ‐‐data "{'description': '', 'realtimeService': true, 'data': [{'templateOperationId': 'resize_max_fit',
-'option': {'resizeType': 'max_fit', 'width': 100, 'height': 100, 'quality': 80, 'shrinkLargerOnly':
-false}}]}"
+'option': {'resizeType': 'max_fit', 'width': 100, 'height': 100, 'quality': 80, 'upDownSizeType':
+'downOnly'}}]}"
 ```
 
 [Response Sample]
@@ -903,6 +906,7 @@ false}}]}"
 	            "height": 100,
 	            "quality": 80,
 	            "shrinkLargerOnly": false,
+	            "upDownSizeType": "downOnly",
 	            "keepAnimation": false,
 	            "keepExif": true,
 	            "autoOrient": true
@@ -1002,6 +1006,7 @@ curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/ope
 	                    "height": 100,
 	                    "quality": 80,
 	                    "shrinkLargerOnly": false,
+			            "upDownSizeType": "downOnly",
 	                    "keepAnimation": false,
 	                    "keepExif": true,
 	                    "autoOrient": true
@@ -1101,6 +1106,7 @@ curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/ope
 		            "height": 100,
 		            "quality": 80,
 		            "shrinkLargerOnly": false,
+		            "upDownSizeType": "downOnly",
 		            "keepAnimation": false,
 		            "keepExif": true,
 		            "autoOrient": true
@@ -1248,6 +1254,7 @@ curl ‐X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/op
 	                    "height": 100,
 	                    "quality": 80,
 	                    "shrinkLargerOnly": false,
+			            "upDownSizeType": "downOnly",
 	                    "keepAnimation": false,
 	                    "keepExif": true,
 	                    "autoOrient": true
