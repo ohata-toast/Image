@@ -9,7 +9,7 @@
 * 크롭 방식 추가
     * Slice Crop 추가 
 * [Console] Gif 애니메이션 유지 옵션 글로벌 설정으로 변경
-* [API] 이미지 접근 도매인 추가
+* [API] 이미지 접근 도메인 추가
     * image1.toast.com
     * image2.toast.com
 #### 버그 수정
