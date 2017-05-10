@@ -1,5 +1,9 @@
 ## Contents > Image > Release Notes
 
+### 2017.05.25
+#### 버그 수정
+* Image Meta 정보 파싱 에러 수정
+
 ### 2017.04.20
 #### 기능 개선/변경
 * [썸네일 크기조절 방식 추가](./Developer`s Guide/#_10)
