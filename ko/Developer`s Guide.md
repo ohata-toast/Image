@@ -762,7 +762,7 @@ fileIds=5fa8ce52‐d066‐490c‐85dd‐f8cef181dd28,96f726bd‐93e4‐4f7c‐ad
 ## 이미지 오퍼레이션
 
 이미지 오퍼레이션 API를 통해 다양한 썸네일을 생성할 수 있습니다.  
-썸네일 크기, 흑백 필터, 크롭(Retangle, Circle, Slice) 제공  
+썸네일 크기, 흑백 필터, 크롭(Rectangle, Circle, Slice) 제공  
 
 ### 이미지 오퍼레이션 생성 및 수정
 
@@ -809,7 +809,7 @@ json 객체로 전달합니다.
         quality: double, // (optional, default: 75) 품질, 1~100(100 : 원본 품질)
         upDownSizeType: String, // (optional, default: downOnly) 원본 이상으로 확대/축소 불가 여부
         	// (downOnly, upOnly, upDownAll)
-        	// 기존 shrinkLargerOnly이 upDownSizeType으로 대체. 호환성이 유지 되므로 기존옵션도 사용 가능 
+        	// 기존 shrinkLargerOnly이 upDownSizeType으로 대체. 호환성이 유지 되므로 기존옵션도 사용 가능
         keepAnimation: boolean, // (optional, default: true) GIF 애니메이션 유지 여부
         keepExif: boolean, // (optional, default: true) 메타정보 유지 여부
         autoOrient: boolean, // (optional, default: false) Orientation 정보를 기준으로 회전 여부
@@ -828,7 +828,7 @@ json 객체로 전달합니다.
 }
 ```
 
-[Retangle 크롭]
+[Rectangle 크롭]
 ```
 {
     templateOperationId: "rectangle", // (required) 기반이 되는 템플릿 ID
@@ -849,7 +849,7 @@ json 객체로 전달합니다.
 {
     templateOperationId: "circle", // (required) 기반이 되는 템플릿 ID
     option: {
-        gravity: string, // (optional, default: "Center") 기준 위치 
+        gravity: string, // (optional, default: "Center") 기준 위치
         	// (NorthWest, North, NorthEast, West, Center, East, SouthWest, South, SouthEast)
         offsetX: int, // (optional, default: 0) 기준 위치 이동 (‐ 값 가능: 반대로 이동)
         offsetY: int, // (optional, default: 0) 기준 위치 이동 (‐ 값 가능: 반대로 이동)
