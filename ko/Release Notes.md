@@ -1,9 +1,5 @@
 ## Contents > Image > Release Notes
 
-### 2017.08.24
-#### 기능 개선/변경
-* 통합 AppKey 사용 가능하도록 수정
-
 ### 2017.05.25
 #### 버그 수정
 * Image Meta 정보 파싱 에러 수정
