@@ -12,7 +12,7 @@
 	* Group 2 분할 처리 : Slice Crop (가로, 세로, 격자)
 	* Group 3 합성 처리 : Circle Crop
 	* 이미지 처리는 Group 순서대로 처리가 됩니다.
-* [[Console] 전체 삭제 기능 추가](./Getting Started/#_9)
+* [[Console] 상품 종료 프로세스 변경](./Getting Started/#_9)
 	* 상품 이용 종료 시 남아있는 파일이 있는 경우 이용 종료가 불가능 합니다.
 	* 전체 파일 삭제 기능이 추가되었고, 전체 삭제 후 상품 이용 종료가 가능합니다.
 
