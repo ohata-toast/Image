@@ -858,7 +858,7 @@ json 객체로 전달합니다.
 }
 ```
 
-[Slice 크롭]
+[Slice 크롭 : 가로, 세로 분할]
 ```
 {
     templateOperationId: "slice", // (required) 기반이 되는 템플릿 ID
@@ -867,6 +867,19 @@ json 객체로 전달합니다.
         sliceSize: int, // (optional, default: 0) 분할 크기
         callbackUrl: string, // (optional, default: "") operation 실행 결과를 리턴받을 콜백 url
         keepAnimation: boolean // (optional, default: true) GIF 애니메이션 유지 여부
+    }
+}
+```
+
+[Slice 크롭 : 격자 분할]
+```
+{
+    templateOperationId: "grid", // (required) 기반이 되는 템플릿 ID
+    option: {
+		countX : int, // (Required) 가로 분할 갯수
+		countY : int, // (Required) 세로 분할 갯수
+		// 원본 사이즈에 따라서 분할 개수로 나누었을때 조각 사이즈가 정수가 아닌 경우에는 설정한 분할 개수 보다 적은 수로 분할 될 수 있습니다.
+        callbackUrl: string, // (optional, default: "") operation 실행 결과를 리턴받을 콜백 url
     }
 }
 ```
