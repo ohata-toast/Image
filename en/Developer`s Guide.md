@@ -878,6 +878,7 @@ json 객체로 전달합니다.
     option: {
 		countX : int, // (Required) 가로 분할 갯수
 		countY : int, // (Required) 세로 분할 갯수
+		// 원본 사이즈에 따라서 분할 개수로 나누었을때 조각 사이즈가 정수가 아닌 경우에는 설정한 분할 개수 보다 적은 수로 분할 될 수 있습니다.
         callbackUrl: string, // (optional, default: "") operation 실행 결과를 리턴받을 콜백 url
     }
 }
