@@ -7,6 +7,7 @@
 * [[Console] 이미지 처리 옵선 추가](./Getting Started/#_8)
 	* 기존 Resize에서만 설정 가능했던 옵션을 공통 옵션으로 설정 가능하도록 수정하였습니다.
 		* 품질, 이미지 포맷, 결과 콜백 URL, 메타정보 유지 여부, Orientation 정보를 기준으로 회전 여부
+	* GIF 애니메이션 유지 옵션의 default 값 변경 : 유지하지 않음 에서 유지 함 으로 변경되었습니다.
 * [[Console] 이미지 처리 기능에 따라 Grouping](./Getting Started/#_8)
 	* Group 1 기본 처리 : Resize, Gray, Rectangle Crop
 	* Group 2 분할 처리 : Slice Crop (가로, 세로, 격자)
