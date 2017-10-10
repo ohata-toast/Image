@@ -762,7 +762,7 @@ fileIds=5fa8ce52‐d066‐490c‐85dd‐f8cef181dd28,96f726bd‐93e4‐4f7c‐ad
 ## 이미지 오퍼레이션
 
 이미지 오퍼레이션 API를 통해 다양한 썸네일을 생성할 수 있습니다.  
-썸네일 크기, 흑백 필터, 크롭(Rectangle, Circle, Slice) 제공  
+썸네일 크기, 흑백 필터, 크롭(Rectangle, Circle, Slice), 워터마크 제공  
 
 ### 이미지 오퍼레이션 생성 및 수정
 
@@ -879,7 +879,21 @@ json 객체로 전달합니다.
 		countX : int, // (Required) 가로 분할 갯수
 		countY : int, // (Required) 세로 분할 갯수
 		// 원본 사이즈에 따라서 분할 개수로 나누었을때 조각 사이즈가 정수가 아닌 경우에는 설정한 분할 개수 보다 적은 수로 분할 될 수 있습니다.
-        callbackUrl: string, // (optional, default: "") operation 실행 결과를 리턴받을 콜백 url
+        callbackUrl: string // (optional, default: "") operation 실행 결과를 리턴받을 콜백 url
+    }
+}
+```
+
+[워터마크]
+```
+{
+    templateOperationId: "watermark", // (required) 기반이 되는 템플릿 ID
+    option: {
+        gravity: string, // (optional, default: "Center") 기준 위치
+        	// (NorthWest, North, NorthEast, West, Center, East, SouthWest, South, SouthEast)
+        offsetX: int, // (optional, default: 0) 기준 위치 이동 (‐ 값 가능: 반대로 이동)
+        offsetY: int, // (optional, default: 0) 기준 위치 이동 (‐ 값 가능: 반대로 이동)
+        watermarkImagePath: string // (Required) 합성 할 이미지 파일의 경로 
     }
 }
 ```
