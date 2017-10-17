@@ -74,8 +74,8 @@ json 객체로 전달합니다.
 
 [Request Example]
 
-\# myfolder라는 이름의 폴더를 루트 폴더 하위에 생성합니다.  
-\# {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.  
+- myfolder라는 이름의 폴더를 루트 폴더 하위에 생성합니다.  
+- {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.  
 
 ```
 curl ‐X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders" \
@@ -147,8 +147,8 @@ curl ‐X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/fo
 
 [Request Example]
 
-\# /myfolder 하위의 폴더와 파일을 조회합니다.  
-\# {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.  
+- /myfolder 하위의 폴더와 파일을 조회합니다.  
+- {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.  
 
 ```
 curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders?basepath=/myfolder" \
@@ -286,8 +286,8 @@ curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/fol
 
 [Request Example]
 
-\# myfolder의 폴더의 속성을 조회합니다.  
-\# {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.  
+- myfolder의 폴더의 속성을 조회합니다.  
+- {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.  
 
 ```
 curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/properties?path=/myfolder" \
@@ -365,8 +365,8 @@ curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/pro
 
 [Request Example]
 
-\# /myfolder 폴더에 sample.png 이미지를 업로드 합니다.    
-\# {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.  
+- /myfolder 폴더에 sample.png 이미지를 업로드 합니다.    
+- {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.  
 
 ```
 curl ‐X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images?
@@ -509,8 +509,8 @@ path=/myfolder/sample.png&overwrite=true" \
 
 [Request Example]
 
-\# /myfolder/banner 폴더에 left.png, right.png 이미지를 업로드 합니다.  
-\# {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.
+- /myfolder/banner 폴더에 left.png, right.png 이미지를 업로드 합니다.  
+- {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.
 
 ```
 curl ‐X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images" \
