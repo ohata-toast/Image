@@ -136,7 +136,7 @@ curl ‐X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/fo
 [Request Parameters]
 
 |이름|	Type|	필수 여부|	기본값|	설명|
-|---|---|---|---|
+|---|---|---|---|---|
 |appkey|	string|	Y| - |토스트 클라우드 web console을 통해서 생성한 appkey|
 |basepath|	string|	Y| - |조회 할 폴더의 절대 경로|
 |createdBy|	string|	N| - |목록 조회 대상 (공백: 전체, U: 사용자 업로드 이미지, P: 오퍼레이션 이미지)|
@@ -280,7 +280,7 @@ curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/fol
 [Request Parameters]
 
 |이름|	Type|	필수 여부|	기본값|	설명|
-|---|---|---|---|
+|---|---|---|---|---|
 |appkey|	string|	Y| - |토스트 클라우드 web console을 통해서 생성한 appkey|
 |path|	string|	Y| -|조회 할 폴더의 절대 경로|
 
@@ -509,7 +509,7 @@ path=/myfolder/sample.png&overwrite=true" \
 
 [Request Example]
 
-\# /myfolder/banner 폴더에 left.png, right.png 이미지를 업로드 합니다.
+\# /myfolder/banner 폴더에 left.png, right.png 이미지를 업로드 합니다.  
 \# {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.
 
 ```
@@ -1227,7 +1227,7 @@ curl ‐X DELETE "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/
 [Request Parameters]
 
 |이름|	Type|	필수 여부|	기본값|	설명|
-|---|---|---|---|
+|---|---|---|---|---|
 |appkey|	string|	Y| -|토스트 클라우드 web console을 통해서 생성한 appkey|
 
 [Request Body]
