@@ -74,8 +74,8 @@ json 객체로 전달합니다.
 
 [Request Example]
 
-\# myfolder라는 이름의 폴더를 루트 폴더 하위에 생성합니다.  
-\# {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.  
+- myfolder라는 이름의 폴더를 루트 폴더 하위에 생성합니다.  
+- {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.  
 
 ```
 curl ‐X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders" \
@@ -136,7 +136,7 @@ curl ‐X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/fo
 [Request Parameters]
 
 |이름|	Type|	필수 여부|	기본값|	설명|
-|---|---|---|---|
+|---|---|---|---|---|
 |appkey|	string|	Y| - |토스트 클라우드 web console을 통해서 생성한 appkey|
 |basepath|	string|	Y| - |조회 할 폴더의 절대 경로|
 |createdBy|	string|	N| - |목록 조회 대상 (공백: 전체, U: 사용자 업로드 이미지, P: 오퍼레이션 이미지)|
@@ -147,8 +147,8 @@ curl ‐X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/fo
 
 [Request Example]
 
-\# /myfolder 하위의 폴더와 파일을 조회합니다.  
-\# {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.  
+- /myfolder 하위의 폴더와 파일을 조회합니다.  
+- {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.  
 
 ```
 curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders?basepath=/myfolder" \
@@ -280,14 +280,14 @@ curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/fol
 [Request Parameters]
 
 |이름|	Type|	필수 여부|	기본값|	설명|
-|---|---|---|---|
+|---|---|---|---|---|
 |appkey|	string|	Y| - |토스트 클라우드 web console을 통해서 생성한 appkey|
 |path|	string|	Y| -|조회 할 폴더의 절대 경로|
 
 [Request Example]
 
-\# myfolder의 폴더의 속성을 조회합니다.  
-\# {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.  
+- myfolder의 폴더의 속성을 조회합니다.  
+- {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.  
 
 ```
 curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/properties?path=/myfolder" \
@@ -365,8 +365,8 @@ curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/pro
 
 [Request Example]
 
-\# /myfolder 폴더에 sample.png 이미지를 업로드 합니다.    
-\# {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.  
+- /myfolder 폴더에 sample.png 이미지를 업로드 합니다.    
+- {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.  
 
 ```
 curl ‐X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images?
@@ -509,8 +509,8 @@ path=/myfolder/sample.png&overwrite=true" \
 
 [Request Example]
 
-\# /myfolder/banner 폴더에 left.png, right.png 이미지를 업로드 합니다.
-\# {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.
+- /myfolder/banner 폴더에 left.png, right.png 이미지를 업로드 합니다.  
+- {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.
 
 ```
 curl ‐X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images" \
@@ -762,7 +762,7 @@ fileIds=5fa8ce52‐d066‐490c‐85dd‐f8cef181dd28,96f726bd‐93e4‐4f7c‐ad
 ## 이미지 오퍼레이션
 
 이미지 오퍼레이션 API를 통해 다양한 썸네일을 생성할 수 있습니다.  
-썸네일 크기, 흑백 필터, 크롭(Rectangle, Circle, Slice) 제공  
+썸네일 크기, 흑백 필터, 크롭(Rectangle, Circle, Slice), 워터마크 제공  
 
 ### 이미지 오퍼레이션 생성 및 수정
 
@@ -858,7 +858,7 @@ json 객체로 전달합니다.
 }
 ```
 
-[Slice 크롭]
+[Slice 크롭 : 가로, 세로 분할]
 ```
 {
     templateOperationId: "slice", // (required) 기반이 되는 템플릿 ID
@@ -867,6 +867,33 @@ json 객체로 전달합니다.
         sliceSize: int, // (optional, default: 0) 분할 크기
         callbackUrl: string, // (optional, default: "") operation 실행 결과를 리턴받을 콜백 url
         keepAnimation: boolean // (optional, default: true) GIF 애니메이션 유지 여부
+    }
+}
+```
+
+[Slice 크롭 : 격자 분할]
+```
+{
+    templateOperationId: "grid", // (required) 기반이 되는 템플릿 ID
+    option: {
+		countX : int, // (Required) 가로 분할 갯수
+		countY : int, // (Required) 세로 분할 갯수
+		// 원본 사이즈에 따라서 분할 개수로 나누었을때 조각 사이즈가 정수가 아닌 경우에는 설정한 분할 개수 보다 적은 수로 분할 될 수 있습니다.
+        callbackUrl: string // (optional, default: "") operation 실행 결과를 리턴받을 콜백 url
+    }
+}
+```
+
+[워터마크]
+```
+{
+    templateOperationId: "watermark", // (required) 기반이 되는 템플릿 ID
+    option: {
+        gravity: string, // (optional, default: "Center") 기준 위치
+        	// (NorthWest, North, NorthEast, West, Center, East, SouthWest, South, SouthEast)
+        offsetX: int, // (optional, default: 0) 기준 위치 이동 (‐ 값 가능: 반대로 이동)
+        offsetY: int, // (optional, default: 0) 기준 위치 이동 (‐ 값 가능: 반대로 이동)
+        watermarkImagePath: string // (Required) 합성 할 이미지 파일의 경로 
     }
 }
 ```
@@ -1200,7 +1227,7 @@ curl ‐X DELETE "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/
 [Request Parameters]
 
 |이름|	Type|	필수 여부|	기본값|	설명|
-|---|---|---|---|
+|---|---|---|---|---|
 |appkey|	string|	Y| -|토스트 클라우드 web console을 통해서 생성한 appkey|
 
 [Request Body]
