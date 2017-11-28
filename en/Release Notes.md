@@ -3,7 +3,12 @@
 ### 2017.11.30
 #### 기능 추가
 * 처리 결과 Callback 기능 추가
-	* [다중 이미지 업로드](./Developer`s Guide/#_6) 및 [이미지 오퍼레이션 실행](./Developer`s Guide/#_14) API 호출 시 callbackUrl을 파라미터로 전달하면 처리 결과를 callbackUrl로 전송해주는 기능이 추가되었습니다.
+	* API 호출 시 callbackUrl을 파라미터로 전달하면 처리 결과를 callbackUrl로 전송해주는 기능이 추가되었습니다.
+		* [다중 이미지 업로드](./Developer`s Guide/#_6)
+		* [이미지 오퍼레이션 실행](./Developer`s Guide/#_14)
+
+#### 버그 수정
+ * [Console] 압축 파일이 포함된 폴더 업로드 시 하위 폴더 경로가 잘못 생성되던 버그가 수정되었습니다.
 
 ### 2017.11.23
 #### 기능 개선/변경
