@@ -74,8 +74,8 @@ json 객체로 전달합니다.
 
 [Request Example]
 
-- myfolder라는 이름의 폴더를 루트 폴더 하위에 생성합니다.  
-- {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.  
+- myfolder라는 이름의 폴더를 루트 폴더 하위에 생성합니다.
+- {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.
 
 ```
 curl ‐X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders" \
@@ -147,8 +147,8 @@ curl ‐X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/fo
 
 [Request Example]
 
-- /myfolder 하위의 폴더와 파일을 조회합니다.  
-- {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.  
+- /myfolder 하위의 폴더와 파일을 조회합니다.
+- {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.
 
 ```
 curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders?basepath=/myfolder" \
@@ -286,8 +286,8 @@ curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/fol
 
 [Request Example]
 
-- myfolder의 폴더의 속성을 조회합니다.  
-- {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.  
+- myfolder의 폴더의 속성을 조회합니다.
+- {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.
 
 ```
 curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/properties?path=/myfolder" \
@@ -365,8 +365,8 @@ curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/pro
 
 [Request Example]
 
-- /myfolder 폴더에 sample.png 이미지를 업로드 합니다.    
-- {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.  
+- /myfolder 폴더에 sample.png 이미지를 업로드 합니다.
+- {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.
 
 ```
 curl ‐X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images?
@@ -503,13 +503,12 @@ path=/myfolder/sample.png&overwrite=true" \
 |basepath|	string|	Y| -|업로드 할 절대 경로|
 |overwrite|	boolean|	N|	false|	같은 이름이 있을 경우 덮어쓰기 여부|
 |autorename|	boolean|	N|	false|	같은 이름이 있을 경우 '이름(1).확장자' 형식으로 파일명 변경 여부|
-|operationIds|	list|	N| -|이미지 오퍼레이션 ID 리스트 (json 형태의 문자열)|
-
-이미지 오퍼레이션 ID를 추가해서 요청할 경우, 업로드 시 원하는 옵션으로 오퍼레이션 파일을 생성할 수 있습니다. 이미지 오퍼레이 션 관련 API를 참고합니다.
+|operationIds|	list|	N| -|이미지 오퍼레이션 ID 리스트 (json 형태의 문자열). 업로드 시 원하는 옵션으로 오퍼레이션 파일을 생성. 이미지 오퍼레이션 관련 API 참고|
+|callbackUrl|	string|	N| -|처리 결과를 통보받을 URL 경로. query string 형식으로 id를 적으면 callback 전송 시 같이 전달됨|
 
 [Request Example]
 
-- /myfolder/banner 폴더에 left.png, right.png 이미지를 업로드 합니다.  
+- /myfolder/banner 폴더에 left.png, right.png 이미지를 업로드 합니다.
 - {secretKey}와 {appKey}는 Web Console에서 확인한 값으로 변경합니다.
 
 ```
@@ -669,6 +668,47 @@ curl ‐X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/im
 }
 ```
 
+[Callback Sample]
+
+```
+{
+	"header":{
+		"resultMessage":"Partial Success",
+		"resultCode":1,
+		"isSuccessful":false
+	},
+	"id":"100",
+	"successFiles":[
+		{
+			"id":"c4de7cec-ba9c-44fa-b1fc-93e2eb29ed10",
+			"name":"image.jpg",
+			"path":"/myfolder/image.jpg",
+			"url":"http://image.toast.com/aaaaach/myfolder/image.jpg",
+			"width":546,
+			"height":304,
+			"sizeByte":105190,
+			"updatedAt":"2017-11-28T14:30:14+0900"
+		}
+	],
+	"failFiles":[
+		{
+			"name":"test.jpg",
+			"path":"/myfolder/test.jpg",
+			"sizeByte":105190,
+			"resultCode":20010,
+			"resultMessage":"There is same file name."
+		},
+		{
+			"name":"big_size.jpg",
+			"path":"/myfolder/big_size.jpg",
+			"sizeByte":12925663,
+			"resultCode":11004,
+			"resultMessage":"It was exceed the max volume you can upload at once."
+		}
+	]
+}
+```
+
 ### 단일 삭제 (동기)
 
 [Request Url]
@@ -761,8 +801,8 @@ fileIds=5fa8ce52‐d066‐490c‐85dd‐f8cef181dd28,96f726bd‐93e4‐4f7c‐ad
 
 ## 이미지 오퍼레이션
 
-이미지 오퍼레이션 API를 통해 다양한 썸네일을 생성할 수 있습니다.  
-썸네일 크기, 흑백 필터, 크롭(Rectangle, Circle, Slice), 워터마크 제공  
+이미지 오퍼레이션 API를 통해 다양한 썸네일을 생성할 수 있습니다.
+썸네일 크기, 흑백 필터, 크롭(Rectangle, Circle, Slice), 워터마크 제공
 
 ### 이미지 오퍼레이션 생성 및 수정
 
@@ -893,7 +933,7 @@ json 객체로 전달합니다.
         	// (NorthWest, North, NorthEast, West, Center, East, SouthWest, South, SouthEast)
         offsetX: int, // (optional, default: 0) 기준 위치 이동 (‐ 값 가능: 반대로 이동)
         offsetY: int, // (optional, default: 0) 기준 위치 이동 (‐ 값 가능: 반대로 이동)
-        watermarkImagePath: string // (Required) 합성 할 이미지 파일의 경로 
+        watermarkImagePath: string // (Required) 합성 할 이미지 파일의 경로
     }
 }
 ```
@@ -1038,7 +1078,7 @@ curl ‐X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/ope
 	                    "keepExif": true,
 	                    "autoOrient": true
 	                }
-	            }   
+	            }
         	],
         	"updatedAt": "2016‐02‐26T17:42:27+0900"
     	}
@@ -1239,6 +1279,7 @@ json 객체로 전달합니다.
 |basepath|	string|	Y| -|기준이 되는 폴더의 절대 경로|
 |filepaths|	list|	Y| -|실행 할 절대 경로의 폴더 및 파일 리스트|
 |operationIds|	list|	Y| -|실행 할 오퍼레이션 ID 리스트|
+|callbackUrl|	string|	N| -|처리 결과를 통보받을 URL 경로. query string 형식으로 id를 적으면 callback 전송 시 같이 전달됨|
 
 [Request Example]
 
@@ -1303,6 +1344,53 @@ curl ‐X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/op
 	        "name": "right_100x100.png",
 	        "path": "/myfolder/banner/right_100x100.png"
 		}
+    ]
+}
+```
+
+[Callback Sample]
+```
+// fail sample
+{
+    "header":{
+        "isSuccessful":false,
+        "resultCode":500201,
+        "resultMessage":"Operation fail. "
+    },
+    "id":"100",
+    "operationId":"100x100",
+    "sourceFile":{
+        "url":"http://image.toast.com/aaaaach/myfolder/banner/left.png",
+        "name":"left.png",
+        "path":"/myfolder/banner/left.png"
+    }
+}
+
+// success sample
+{
+    "header":{
+        "isSuccessful":true,
+        "resultCode":0,
+        "resultMessage":"Success"
+    },
+    "id":"100",
+    "operationId":"slice-v",
+    "sourceFile":{
+        "url":"http://image.toast.com/aaaaach/myfolder/banner/vertical.png",
+        "name":"vertical.png",
+        "path":"/myfolder/banner/vertical.png"
+    },
+    "resultFiles":[
+        {
+	        "url":"http://image.toast.com/aaaaach/myfolder/banner/vertical_slice-v_0000.png",
+            "name":"vertical_slice-v_0000.png",
+            "path":"/myfolder/banner/vertical_slice-v_0000.png"
+        },
+        {
+	        "url":"http://image.toast.com/aaaaach/myfolder/banner/vertical_slice-v_0001.png",
+            "name":"vertical_slice-v_0001.png",
+            "path":"/myfolder/banner/vertical_slice-v_0001.png"
+        }
     ]
 }
 ```
