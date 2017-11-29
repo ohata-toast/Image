@@ -877,13 +877,13 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 
 ```
 {
-	"templateOperationId": "rectangle", 	// (required) 기반이 되는 템플릿 ID
+	"templateOperationId": "rectangle",	// (required) 기반이 되는 템플릿 ID
 	"option": {
-		"gravity": String, 				// (optional, default: Center,
-										// value: NorthWest / North / NorthEast / West / Center / East / SouthWest / South / SouthEast)
+		"gravity": String, 				// (optional, default: Center, value: NorthWest / North / NorthEast /
+										// West / Center / East / SouthWest / South / SouthEast)
 										// 기준 위치
-		"offsetX": int, 					// (optional, default: 0) 기준 위치 이동. 음수는 반대로 이동
-		"offsetY": int, 					// (optional, default: 0) 기준 위치 이동. 음수는 반대로 이동
+		"offsetX": int,					// (optional, default: 0) 기준 위치 이동. 음수는 반대로 이동
+		"offsetY": int,					// (optional, default: 0) 기준 위치 이동. 음수는 반대로 이동
 		"width": int, 					// (required) 가로 사이즈
 		"height": int, 					// (required) 세로 사이즈
 		"keepAnimation": boolean 		// (optional, default: false) GIF 애니메이션 유지 여부
@@ -897,11 +897,11 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 {
 	"templateOperationId": "circle", 	// (required) 기반이 되는 템플릿 ID
 	"option": {
-		"gravity": String, 				// (optional, default: Center,
-										// value: NorthWest / North / NorthEast / West / Center / East / SouthWest / South / SouthEast)
+		"gravity": String, 				// (optional, default: Center, value: NorthWest / North / NorthEast /
+										// West / Center / East / SouthWest / South / SouthEast)
 										// 기준 위치
-		"offsetX": int, 					// (optional, default: 0) 기준 위치 이동. 음수는 반대로 이동
-		"offsetY": int, 					// (optional, default: 0) 기준 위치 이동. 음수는 반대로 이동
+		"offsetX": int,					// (optional, default: 0) 기준 위치 이동. 음수는 반대로 이동
+		"offsetY": int,					// (optional, default: 0) 기준 위치 이동. 음수는 반대로 이동
 		"radius": int 					// (required) 반지름
 	}
 }
@@ -911,7 +911,7 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 
 ```
 {
-	"templateOperationId": "slice", 		// (required) 기반이 되는 템플릿 ID
+	"templateOperationId": "slice",		// (required) 기반이 되는 템플릿 ID
 	"option": {
 		"sliceCropType": String, 		// (optional, default: "vertical") 분할 방식 (vertical, horizontal)
 		"sliceSize": int, 				// (optional, default: 0) 분할 크기
@@ -921,7 +921,7 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 }
 ```
 
-[Slice 크롭 : 격자 분할]
+- Slice 크롭 : 격자 분할
 
 ```
 {
@@ -942,11 +942,11 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 {
 	"templateOperationId": "watermark", // (required) 기반이 되는 템플릿 ID
 	"option": {
-		"gravity": String, 				// (optional, default: Center,
-										// value: NorthWest / North / NorthEast / West / Center / East / SouthWest / South / SouthEast)
+		"gravity": String, 				// (optional, default: Center, value: NorthWest / North / NorthEast /
+										// West / Center / East / SouthWest / South / SouthEast)
 										// 기준 위치
-		"offsetX": int, 					// (optional, default: 0) 기준 위치 이동. 음수는 반대로 이동
-		"offsetY": int, 					// (optional, default: 0) 기준 위치 이동. 음수는 반대로 이동
+		"offsetX": int,					// (optional, default: 0) 기준 위치 이동. 음수는 반대로 이동
+		"offsetY": int,					// (optional, default: 0) 기준 위치 이동. 음수는 반대로 이동
 		"watermarkImagePath": String 	// (Required) 합성 할 이미지 파일의 경로
 	}
 }
