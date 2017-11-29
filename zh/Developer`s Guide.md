@@ -1644,36 +1644,59 @@ curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/queue
 
 Response Code, Message
 
-|resultCode|resultKey|resultMessage(영문)|resultMessage (한글)|비고|
-|---|---|---|---|---|
-|0|SUCCESS|Success|OOO 성공|성공|
-|1|PARTIAL_SUCCESS|Partial Success|부분 성공|부분 성공<br/>리스트 중에 일부는 성공, 일부는 실패|
-|2|UPLOAD_ALL_FAIL|Partial Success|부분 성공|부분 성공<br/>리스트 중에 일부는 성공, 일부는 실패|
-|–1|FAIL|Unknown error|알 수 없는 에러가 발생했습니다.|내부 에러 발생시|
-|403|NOT_ALLOWED|Not Allowed.|혀용되지 않은 요청입니다.| -|
-|404|NOT_FOUND|Please check your API Url, Parameters or HTTP Method.|API URL, 파라미터, HTTP Method 를 확인하십시요| -|
-|10001|INVALID_PARAMETERS|One or more parameters were invalid.|파라미터를 확인해주세요.|파라미터 값을 잘못 보냈거나, 누락했을 때|
-|10002|INVALID_FILES| -|업로드할 파일이 없거나, 유효하지 않은 파일입니다.|업로드할 파일이 없거나, 깨진 이미지 일 때|
-|11001|PATH_LENGTH_LIMIT| -|전체 경로의 최대 길이는 2000자입니다.|전체 경로 길이 제한 (2000)­ linux system: 4096­ 브라우저 URL 길이 제한: IE10:2083, IE11: 3600|
-|11002|FILENAME_LENGTH_LIMIT| -|파일과 폴더 이름의 최소 길이는 2자 최대 길이는 255자입니다.|파일/폴더명 길이 제한 (2 ~ 255)­ N드라이브: 80자, dropbox: 255자|
-|11003|FILE_COUNT_LIMIT| -|요청할 수 있는 파일과 폴더의 최대 개수는 10000개 입니다.|삭제와 목록 조회 등으로 요청한파일과 폴더 개수가 많을때 (기본: 100개, max: 10000개)|
-|11004|UPLOAD_SIZE_LIMIT| -|한번에 업로드 할 수있는 용량을 초과 했습니다(최대12Mbytes).|업로드 파일 용량 초과 (1개 파일 max: , 1회 요청 max: )|
-|11050|INVALID_FILENAME|Invalid Characters in File or Folder Name|파일과 폴더 이름에는 다음 문자는 사용할 수 없습니다. ~ \ / :? * " &brvbar;|파일/폴더명 validation ( ~ / \ : ? * " &brvbar;)|
-|11051|INVALID_URL| -|URL 업로드 지원포트는 80, 443입니다.|URL을 통한 업로드 시 URL 지원포트|
-|11060|FILENAME_EMPTY| -|폴더 또는 파일 이름을 입력해야 합니다.|-|
-|20000|FOLDER_DUPLICATED_NAME|There is already a folder at the given destination|동일한 이름의 폴더가 있습니다.|중복된 폴더명으로 생성 또는 rename시|
-|20001|FOLDER_NOT_EXISTS|No file was found at the specified path.|해당 경로에 파일 또는 폴더가 없습니다.|해당경로에 파일/폴더가 없을 때e.g. 삭제, 다운로드|
-|20002|INVALID_BASE_PATH| -|상위 폴더가 존재하지 않습니다.|파일 업로드 및 폴더 생성시, 상위 폴더가 삭제 중이거나 없을 경우|
-|20010|FILE_DUPLICATED_NAME| -|동일한 이름의 파일이 있습니다.|overwrite=false&autorename=false인 경우에, 같은 이름의 파일이 있는 경우|
-|21002|MARKED_ALREADY_DELETING| -|삭제 요청된 파일 또는 폴더입니다.| -|
-|21003|DELETE_FILE_COUNT_LIMIT| -|삭제할 수 있는 파일과 폴더의 최대 개수는 10000개 입니다.| -|
-|21011|NO_FILE_TO_DELETE| -|삭제 할 데이터가 없습니다.| -|
-|21030|FAIL_TO_DELETE| -|삭제 중에 문제가 발생하였습니다.| -|
-|21031|FAIL_TO_CREATE_ROOT_FOLDER| -|Root 폴더 생성을 실패하였습니다.| -|
-|22001|FAIL_TO_CREATE_FOLDER| -|폴더 생성을 실패하였습니다.| -|
-|23001|FAIL_TO_UPLOAD_IMAGES| -|이미지 업로드중에 문제가 발생하였습니다.| -|
-|24001|FAIL_TO_SWIFT| -|스토리지 접근이 불가능합니다.| -|
-|30004|INVALID_APPKEY| -|인증정보가 유효하지 않습니다.|App Key 또는 Secret Key 에러|
-|30005|INVALID_USER| -|사용자 정보가 유효하지 않습니다.	| -|
-|40000|OPERATION_NOT_ALLOWED| -|오퍼레이션 권한이 없습니다.| -|
-|40001|OPERATION_FAIL| -|이미지 오퍼레이션 처리에 실패했습니다.| -|
+|resultCode|resultKey|resultMessage|
+|---|---|----|
+|0|SUCCESS|Success|
+|1|PARTIAL_SUCCESS|Partial Success|
+|2|UPLOAD_ALL_FAIL|Fail|
+|-1|FAIL|Unknown error.|
+|400|BAD_REQUEST|It could not understand the request due to invalid syntax.|
+|401|UNAUTHORIZED|Unauthorized|
+|403|NOT_ALLOWED|Not Allowed.|
+|404|NOT_FOUND|Please check your API Url, HTTP Method.|
+|415|UNSUPPORTED_MEDIA_TYPE|Please check your Media type. Only can be using 'application/json'|
+|5000|INVALID_PARAM|'{}' is invalid.|
+|5001|INVALID_PARAM_MORE_THAN|'{}' must be more than '{}'.|
+|5002|INVALID_PARAM_BETWEEN_THAN|'{}' must be more than '{}' or less than '{}'.|
+|5003|INVALID_PARAM_NOT_DEFINED|'{}' is not defined.|
+|5004|INVALID_PARAM_IS_NOT_NULL|'{}' must be not null|
+|5005|INVALID_PARAM_EXTENSION|it must be '{}'|
+|5006|INVALID_PARAM_IS_SAME|the value of '{}' and '{}' must be differed.|
+|5007|INVALID_PARAM_NOT_TOGETHER|'{}' can not use with '{}'.|
+|10001|INVALID_PARAMETERS|parameter is invalid.|
+|10002|INVALID_FILES|There is not exist upload file or it is an invalid file.|
+|11001|PATH_LENGTH_LIMIT|The max byte size of full path is 1024.|
+|11002|FILENAME_LENGTH_LIMIT|It is 2 ~ 255 the length of file and folder.|
+|11003|FILE_COUNT_LIMIT|It is 10,000 the max count of file and folder you can request.|
+|11004|UPLOAD_SIZE_LIMIT|It was exceed the max volume you can upload at once.|
+|11050|INVALID_FILENAME|Invalid Characters in File or Folder Name|
+|11051|INVALID_URL|It is 80,443 the upload port count of URL.|
+|11060|FILENAME_EMPTY|You must register the name of file or folder.|
+|20000|FOLDER_DUPLICATED_NAME|There is already a folder at the given destination. path: {}|
+|20001|FOLDER_NOT_EXISTS|No file was found at the specified path.|
+|20002|INVALID_BASE_PATH|It does not exist upper folder.|
+|20010|FILE_DUPLICATED_NAME|There is same file name.|
+|21002|MARKED_ALREADY_DELETING|It was file or folder requested to delete.|
+|21003|DELETE_FILE_COUNT_LIMIT|It is 10,000 the max count of file and folder you are able to delete.|
+|21011|NO_FILE_TO_DELETE|It does not exist the data to delete.|
+|21030|FAIL_TO_DELETE|It occurred some problem while deleting.|
+|22001|FAIL_TO_CREATE_FOLDER|It occurred some problem while creating folder.|
+|23002|FAIL_TO_META_IMAGES|It could not extract the image attribute.|
+|24001|FAIL_TO_SWIFT|The storage access was denied.|
+|24002|FAIL_TO_SWIFT_DELETE_OBJECT|It occurred some proble while storage deleting|
+|24003|FAIL_TO_SWIFT_CREATE_CONTAINER|Failed to create new swift container.|
+|24004|FAIL_TO_SWIFT_SET_PRIVATE|Failed to set private swift container.|
+|30004|INVALID_APPKEY|The authentication is invalid.|
+|30005|INVALID_USER|The user is invalid.|
+|40000|OPERATION_NOT_ALLOWED|You have no operation authority.|
+|40001|OPERATION_FAIL|Failed to process the image operation.|
+|40002|OPERATION_DUPLICATED_NAME|There is same name of Image Operation.|
+|40003|OPERATION_NO_PROCESSING_OPTION|There are not any option for image processing.|
+|40004|OPERATION_PARSING_FAIL|Failed to parsing the image operation.|
+|50001|DUPLICATED_APPKEY|Failed to enable given appKey, since the appKey is already exist.|
+|50002|FAIL_TO_ISSUE_NEW_MEMBERKEY|Failed to issue new memberKey.|
+|50003|FAIL_TO_ENABLE_USER_INTERNAL_ERROR|Failed to enable appKey due to inter server error.|
+|50004|SHORTAGE_MEMBERKEY|Available member key is shortage.|
+|50011|PENDING_DELETE_ALL_JOB|Pending deleting all image files.|
+|50012|FAIL_TO_EXIST_IMAGE_FILE|Remains image files. Please proceed delete all image files.|
+|50013|FAIL_TO_DISABLE_USER_INTERNAL_ERROR|Failed to disable appKey due to inter server error.|
