@@ -1,6 +1,7 @@
 ## Contents > Image > Release Notes
 
 ### 2017.12.21
+#### 기능 개선/변경
 * [Console] 화면 UI 디자인이 변경되었습니다.
 
 ### 2017.11.30
