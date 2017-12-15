@@ -1,5 +1,8 @@
 ## Contents > Image > Release Notes
 
+### 2017.12.21
+* [Console] 화면 UI 디자인이 변경되었습니다.
+
 ### 2017.11.30
 #### 기능 추가
 * 처리 결과 Callback 기능 추가
