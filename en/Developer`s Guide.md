@@ -683,6 +683,7 @@ curl -X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/imag
 			"width": 546,
 			"height": 304,
 			"sizeByte": 105190,
+			"overwritten": true,
 			"updatedAt": "2017-11-28T14:30:14+0900"
 		}
 	],
@@ -1417,6 +1418,7 @@ curl -X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/oper
 		"resultMessage": "Operation fail. "
 	},
 	"id": "100",
+	"overwritten": false,
 	"operationId": "100x100",
 	"sourceFile": {
 		"url": "http://image.toast.com/aaaaach/myfolder/banner/left.png",
@@ -1433,6 +1435,7 @@ curl -X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/oper
 		"resultMessage": "Success"
 	},
 	"id": "100",
+	"overwritten": true,
 	"operationId": "slice-v",
 	"sourceFile": {
 		"url": "http://image.toast.com/aaaaach/myfolder/banner/vertical.png",
