@@ -8,7 +8,7 @@ Image 서비스를 사용하는 데 필요한 API를 설명합니다.
 ### 사전 준비
 
 - API 사용을 위해서는 앱 키와 보안 키가 필요합니다.
-- 앱 키와 보안 키는 Console 상단 'URL & Appkey' 메뉴에서 확인이 가능합니다.
+- 앱 키와 보안 키는 Console 상단 "URL & Appkey" 메뉴에서 확인이 가능합니다.
 
 ### 요청 공통 정보
 
@@ -23,7 +23,7 @@ Image 서비스를 사용하는 데 필요한 API를 설명합니다.
 
 ### 응답 공통 정보
 
-- 모든 API 요청에 ‘200 OK’로 응답합니다. 자세한 응답 결과는 응답 본문의 헤더를 참고합니다.
+- 모든 API 요청에 "200 OK"로 응답합니다. 자세한 응답 결과는 응답 본문의 헤더를 참고합니다.
 
 [성공 응답 본문]
 
@@ -330,7 +330,7 @@ curl -X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/image
 |---|---|---|---|---|---|
 | path | String | 최소 2글자, 최대 255Byte | 필수 |  | 생성 할 절대 경로의 파일명 |
 | overwrite | boolean |  | 선택 | false | 같은 이름이 있을 경우 덮어쓰기 여부 |
-| autorename | boolean |  | 선택 | false | 같은 이름이 있을 경우 '이름(1).확장자' 형식으로 파일명 변경 여부 |
+| autorename | boolean |  | 선택 | false | 같은 이름이 있을 경우 "이름(1).확장자" 형식으로 파일명 변경 여부 |
 | operationIds | String List |  | 선택 |  | 이미지 오퍼레이션 ID 리스트 (콤마로 구분됨) |
 
 - 이미지 오퍼레이션 ID를 추가해서 요청할 경우, 업로드 시 원하는 옵션으로 오퍼레이션 파일을 생성할 수 있습니다. 이미지 오퍼레이션 관련 API를 참고합니다.
@@ -446,7 +446,7 @@ curl -X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/imag
 | params | String |  | 필수 |  | 업로드 옵션 (json 형태의 문자열) |
 | params.basepath | String | 최소 2글자, 최대 255Byte | 필수 |  | 업로드 할 절대 경로 |
 | params.overwrite | boolean |  | 선택 | false | 같은 이름이 있을 경우 덮어쓰기 여부 |
-| params.autorename | boolean |  | 선택 | false | 같은 이름이 있을 경우 '이름(1).확장자' 형식으로 파일명 변경 여부 |
+| params.autorename | boolean |  | 선택 | false | 같은 이름이 있을 경우 "이름(1).확장자" 형식으로 파일명 변경 여부 |
 | params.operationIds | String List |  | 선택 |  | 이미지 오퍼레이션 ID 리스트. 업로드 시 원하는 옵션으로 오퍼레이션 파일을 생성. 이미지 오퍼레이션 관련 API 참고 |
 | params.callbackUrl | String |  | 선택 |  | 처리 결과를 통보받을 콜백 Url 경로. query string 형식으로 id를 적으면 콜백 전송 시 같이 전달됨. 포트는 80, 443만 지원 |
 
@@ -630,7 +630,7 @@ curl -X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/imag
 [요청 본문]
 
 - /myfolder/sample.png의 파일을 삭제합니다.
-- /myfolder/sample.png의 ID는 우측 메뉴의 '폴더 내 파일 목록 조회' API를 통해서 알 수 있습니다.
+- /myfolder/sample.png의 ID는 우측 메뉴의 "폴더 내 파일 목록 조회" API를 통해서 알 수 있습니다.
 - {appKey}와 {secretKey}는 Console에서 확인한 값으로 변경합니다.
 
 ```
@@ -641,7 +641,7 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91" \
 
 [필드]
 
-- 'folderId' 또는 'fileId'는 최소 하나 필수 파라미터로 사용해야 합니다.
+- "folderId" 또는 "fileId"는 최소 하나 필수 파라미터로 사용해야 합니다.
 
 | 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
 |---|---|---|---|---|---|
@@ -667,7 +667,7 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91" \
 
 - 여러 개의 폴더와 파일을 삭제합니다.
 - 실제 데이터 삭제는 비동기로 처리됩니다.
-- 처리 결과는 응답으로 전달 받은 'queueId'로 [작업 조회 API](./api-guide/#api_6)를 통해 확인할 수 있습니다.
+- 처리 결과는 응답으로 전달 받은 "queueId"로 [작업 조회 API](./api-guide/#api_6)를 통해 확인할 수 있습니다.
 
 #### 요청
 
@@ -680,7 +680,7 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91" \
 [요청 본문]
 
 - /myfolder/banner/left.png, /myfolder/banner/right.png의 파일을 삭제합니다.
-- ID는 우측 메뉴의 '폴더 내 파일 목록 조회' API를 통해서 알 수 있습니다.
+- ID는 우측 메뉴의 "폴더 내 파일 목록 조회" API를 통해서 알 수 있습니다.
 - {appKey}와 {secretKey}는 Console에서 확인한 값으로 변경합니다.
 
 ```
@@ -691,7 +691,7 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 
 [필드]
 
-- 'folderIds' 또는 'fileIds'는 최소 하나 필수 파라미터로 사용해야 합니다.
+- "folderIds" 또는 "fileIds"는 최소 하나 필수 파라미터로 사용해야 합니다.
 
 | 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
 |---|---|---|---|---|---|
@@ -1154,7 +1154,7 @@ curl -X DELETE "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/op
 ### 이미지 오퍼레이션 실행 (비동기)
 
 - 지정된 파일에 오퍼레이션을 실행하여 썸네일을 생성합니다.
-- 처리 결과는 응답으로 전달 받은 'queueId'로 [작업 조회 API](./api-guide/#api_6)를 통해 확인할 수 있습니다.
+- 처리 결과는 응답으로 전달 받은 "queueId"로 [작업 조회 API](./api-guide/#api_6)를 통해 확인할 수 있습니다.
 
 #### 요청
 
