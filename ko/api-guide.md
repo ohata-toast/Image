@@ -8,9 +8,7 @@ Image 서비스를 사용하는 데 필요한 API를 설명합니다.
 ### 사전 준비
 
 - API 사용을 위해서는 앱 키와 보안 키가 필요합니다.
-
-![[그림 1] API용 앱 키와 보안 키 확인](http://static.toastoven.net/prod_img/v25/img_ag_01.png)
-<center>[그림 1] API용 앱 키와 보안 키 확인</center>
+- 앱 키와 보안 키는 Console 상단 'URL & Appkey' 메뉴에서 확인이 가능합니다.
 
 ### 요청 공통 정보
 
