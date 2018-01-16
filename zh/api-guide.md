@@ -1,6 +1,6 @@
 ## Contents Delivery > Image > API 가이드
 
-Image 서비스를 사용하는 데 필요한 API를 설명합니다.
+Image 서비스의 API를 설명합니다.
 
 
 ## API 공통 정보
@@ -8,18 +8,18 @@ Image 서비스를 사용하는 데 필요한 API를 설명합니다.
 ### 사전 준비
 
 - API 사용을 위해서는 앱 키와 보안 키가 필요합니다.
-- 앱 키와 보안 키는 Console 상단 "URL & Appkey" 메뉴에서 확인이 가능합니다.
+- 앱 키와 보안 키는 콘솔 상단 "URL & Appkey" 메뉴에서 확인이 가능합니다.
 
 ### 요청 공통 정보
 
 - API를 사용하기 위해서는 보안 키 인증 처리가 필요합니다.
-- 모든 API 요청 헤더에 Authorization에 보안 키를 넣어서 요청해야 합니다.
+- 모든 API 요청 헤더에 'Authorization'에 보안 키를 넣어서 요청해야 합니다.
 
 [요청 헤더]
 
 | 이름 | 값 | 설명 |
 |---|---|---|
-| Authorization | {secretKey} | Console에서 발급받은 보안 키 |
+| Authorization | {secretKey} | 콘솔에서 발급받은 보안 키 |
 
 ### 응답 공통 정보
 
@@ -67,7 +67,7 @@ Image 서비스를 사용하는 데 필요한 API를 설명합니다.
 [요청 본문]
 
 - myfolder라는 이름의 폴더를 루트 폴더 하위에 생성합니다.
-- {appKey}와 {secretKey}는 Console에서 확인한 값으로 변경합니다.
+- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
 curl -X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders" \
@@ -80,7 +80,7 @@ curl -X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/fold
 
 | 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
 |---|---|---|---|---|---|
-| path | String | 최소 2글자, 최대 255Byte | 필수 |  | 생성 할 폴더의 절대 경로, 상위 폴더 자동 생성 |
+| path | String | 최소 2글자, 최대 255Byte | 필수 |  | 생성할 폴더의 절대 경로, 상위 폴더 자동 생성 |
 
 #### 응답
 
@@ -128,7 +128,7 @@ curl -X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/fold
 [요청 본문]
 
 - /myfolder 하위의 폴더와 파일을 조회합니다.
-- {appKey}와 {secretKey}는 Console에서 확인한 값으로 변경합니다.
+- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
 curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders?basepath=/myfolder" \
@@ -139,9 +139,9 @@ curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folde
 
 | 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
 |---|---|---|---|---|---|
-| basepath | String | 최소 2글자, 최대 255Byte | 필수 |  | 조회 할 폴더의 전체 경로 |
+| basepath | String | 최소 2글자, 최대 255Byte | 필수 |  | 조회할 폴더의 전체 경로 |
 | createdBy | String | 1글자 | 선택 |  | 목록 조회 대상 <br>(공백: 전체, <br>U: 사용자 업로드 이미지, <br>P: 오퍼레이션 이미지) |
-| name | String | 최소 2글자, 최대 255Byte | 선택 |  | 검색 할 이미지 이름 |
+| name | String | 최소 2글자, 최대 255Byte | 선택 |  | 검색할 이미지 이름 |
 | page | int | 최소 1 | 선택 | 1 | 페이지 번호 |
 | rows | int | 최소 1, 최대 10,000 | 선택 | 100 | 조회 개수 |
 | sort | String | | 선택 | name:asc | 정렬 방식 (정렬대상 : name or date, 정렬방식 : asc or desc) |
@@ -246,7 +246,7 @@ curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folde
 [요청 본문]
 
 - myfolder의 폴더의 속성을 조회합니다.
-- {appKey}와 {secretKey}는 Console에서 확인한 값으로 변경합니다.
+- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
 curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/properties?path=/myfolder" \
@@ -257,7 +257,7 @@ curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/prope
 
 | 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
 |---|---|---|---|---|---|
-| path | String | 최소 2글자, 최대 255Byte | 필수 |  | 조회 할 폴더의 절대 경로 |
+| path | String | 최소 2글자, 최대 255Byte | 필수 |  | 조회할 폴더의 절대 경로 |
 
 #### 응답
 
@@ -287,7 +287,7 @@ curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/prope
 |---|---|---|
 | folder | Object | 폴더 정보 |
 | folder.isFolder | boolean | 폴더 여부 |
-| folder.id | String | 고유 Id |
+| folder.id | String | 고유 ID |
 | folder.name | String | 폴더 이름 |
 | folder.path | String | 폴더 절대 경로 |
 | folder.bytes | long | 폴더 크기 (byte) |
@@ -301,7 +301,7 @@ curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/prope
 
 ### 단일 파일 업로드
 
-- 이미지 파일 1개를 업로드 합니다.
+- 이미지 파일 한 개를 업로드 합니다.
 
 #### 요청
 
@@ -314,7 +314,7 @@ curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/prope
 [요청 본문]
 
 - /myfolder 폴더에 sample.png 이미지를 업로드 합니다.
-- {appKey}와 {secretKey}는 Console에서 확인한 값으로 변경합니다.
+- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 - 이미지 파일의 Binary Data를 넣습니다.
 
 ```
@@ -328,12 +328,13 @@ curl -X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/image
 
 | 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
 |---|---|---|---|---|---|
-| path | String | 최소 2글자, 최대 255Byte | 필수 |  | 생성 할 절대 경로의 파일명 |
+| path | String | 최소 2글자, 최대 255Byte | 필수 |  | 생성할 절대 경로의 파일명 |
 | overwrite | boolean |  | 선택 | false | 같은 이름이 있을 경우 덮어쓰기 여부 |
 | autorename | boolean |  | 선택 | false | 같은 이름이 있을 경우 <br>"이름(1).확장자" 형식으로 파일명 변경 여부 |
 | operationIds | String List |  | 선택 |  | 이미지 오퍼레이션 ID 리스트 (콤마로 구분됨) |
 
-- 이미지 오퍼레이션 ID를 추가해서 요청할 경우, 업로드 시 원하는 옵션으로 오퍼레이션 파일을 생성할 수 있습니다. 이미지 오퍼레이션 관련 API를 참고합니다.
+- 이미지 오퍼레이션 ID를 추가해서 요청할 경우, 업로드 시 원하는 옵션으로 오퍼레이션 파일을 생성할 수 있습니다.
+- [이미지 오퍼레이션 API](./api-guide/#api_4)를 참고합니다.
 
 #### 응답
 
@@ -384,7 +385,7 @@ curl -X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/image
 |---|---|---|
 | file | Object | 이미지 파일 정보 |
 | file.isFolder | boolean | 폴더 여부 |
-| file.id | String | 고유 Id |
+| file.id | String | 고유 ID |
 | file.url | String | 이미지 서비스 Url |
 | file.name | String | 이미지 이름 |
 | file.path | String | 이미지 절대 경로 |
@@ -406,7 +407,7 @@ curl -X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/image
 | file.queues[0].tryCount | int | 다시 시도 횟수 |
 | file.queues[0].queuedAt | DateTime | 작업 등록일 |
 | file.queues[0].operationId | String | 참조되는 오퍼레이션 ID |
-| file.queues[0].url | String | 서비스 될 이미지 서비스 Url |
+| file.queues[0].url | String | 서비스 될 이미지 서비스 URL |
 | file.queues[0].name | String | 생성 될 이미지 이름 |
 | file.queues[0].path | String | 생성 될 이미지 절대 경로 |
 
@@ -414,7 +415,7 @@ curl -X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/image
 ### 다중 파일 업로드
 
 - 여러개의 이미지 파일을 업로드 합니다.
-- 압축 파일 업로드도 지원합니다.
+- 압축 파일 업로드도 가능합니다.
 
 #### 요청
 
@@ -427,7 +428,7 @@ curl -X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/image
 [요청 본문]
 
 - /myfolder/banner 폴더에 left.png, right.png 이미지를 업로드 합니다.
-- {appKey}와 {secretKey}는 Console에서 확인한 값으로 변경합니다.
+- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 - multipart/form–data 형식으로 전달합니다.
 
 ```
@@ -443,8 +444,8 @@ curl -X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/imag
 | 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
 |---|---|---|---|---|---|
 | files | multipart/form–data |  | 필수 |  | 이미지 파일 리스트 |
-| params | String |  | 필수 |  | 업로드 옵션 (json 형태의 문자열) |
-| params.basepath | String | 최소 2글자, 최대 255Byte | 필수 |  | 업로드 할 절대 경로 |
+| params | String | json 형태의 문자열 | 필수 |  | 업로드 옵션 |
+| params.basepath | String | 최소 2글자, 최대 255Byte | 필수 |  | 업로드할 절대 경로 |
 | params.overwrite | boolean |  | 선택 | false | 같은 이름이 있을 경우 덮어쓰기 여부 |
 | params.autorename | boolean |  | 선택 | false | 같은 이름이 있을 경우 <br>"이름(1).확장자" 형식으로 파일명 변경 여부 |
 | params.operationIds | String List |  | 선택 |  | 이미지 오퍼레이션 ID 리스트. <br>업로드 시 원하는 옵션으로 오퍼레이션 파일을 생성. <br>이미지 오퍼레이션 관련 API 참고 |
@@ -544,7 +545,7 @@ curl -X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/imag
 | successes | List | 업로드 성공 목록 |
 | successes[0].isFolder | boolean | 폴더 여부 |
 | successes[0].id | String | 고유 ID |
-| successes[0].url | String | 이미지 서비스 Url |
+| successes[0].url | String | 이미지 서비스 URL |
 | successes[0].name | String | 이미지 이름 |
 | successes[0].path | String | 이미지 절대 경로 |
 | successes[0].bytes | long | 이미지 파일 크기 |
@@ -617,7 +618,7 @@ curl -X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/imag
 
 ### 단일 삭제 (동기)
 
-- 폴더 또는 파일 1개를 삭제합니다.
+- 폴더 또는 파일 한 개를 삭제합니다.
 
 #### 요청
 
@@ -631,7 +632,7 @@ curl -X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/imag
 
 - /myfolder/sample.png의 파일을 삭제합니다.
 - /myfolder/sample.png의 ID는 우측 메뉴의 "폴더 내 파일 목록 조회" API를 통해서 알 수 있습니다.
-- {appKey}와 {secretKey}는 Console에서 확인한 값으로 변경합니다.
+- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
 curl -X DELETE "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images/sync?
@@ -641,13 +642,13 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91" \
 
 [필드]
 
-- "folderId" 또는 "fileId"는 최소 하나 필수 파라미터로 사용해야 합니다.
+- "folderId" 또는 "fileId"는 최소 하나를 필수로 사용해야 합니다.
 
 | 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
 |---|---|---|---|---|---|
-| folderId | String | 최대 50글자 |  |  | 삭제 할 폴더의 ID |
-| fileld | String | 최대 50글자 |  |  | 삭제 할 파일의 ID |
-| includeThumbnail | boolean |  | 선택 | false | 삭제 할 파일에 의해 생성된 오퍼레이션 파일도 삭제 |
+| folderId | String | 최대 50글자 |  |  | 삭제할 폴더의 ID |
+| fileld | String | 최대 50글자 |  |  | 삭제할 파일의 ID |
+| includeThumbnail | boolean |  | 선택 | false | 삭제할 파일에 의해 생성된 오퍼레이션 파일도 삭제 |
 
 #### 응답
 
@@ -680,8 +681,8 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91" \
 [요청 본문]
 
 - /myfolder/banner/left.png, /myfolder/banner/right.png의 파일을 삭제합니다.
-- ID는 우측 메뉴의 "폴더 내 파일 목록 조회" API를 통해서 알 수 있습니다.
-- {appKey}와 {secretKey}는 Console에서 확인한 값으로 변경합니다.
+- 파일 및 폴더 ID는 [폴더 내 파일 목록 조회](./api-guide/#_7)를 통해서 알 수 있습니다.
+- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
 curl -X DELETE "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images/async?
@@ -695,9 +696,9 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 
 | 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
 |---|---|---|---|---|---|
-| folderIds | String | ID 하나 당 최대 50글자 |  |  | 삭제 할 폴더의 ID 리스트 (콤마로 구분됨) |
-| files | String | ID 하나 당 최대 50글자 |  |  | 삭제 할 파일의 ID 리스트 (콤마로 구분됨) |
-| includeThumbnail | boolean |  | 선택 | false | 삭제 할 파일에 의해 생성된 오퍼레이션 파일도 삭제 |
+| folderIds | String | ID 하나 당 최대 50글자 |  |  | 삭제할 폴더의 ID 리스트 (콤마로 구분됨) |
+| files | String | ID 하나 당 최대 50글자 |  |  | 삭제할 파일의 ID 리스트 (콤마로 구분됨) |
+| includeThumbnail | boolean |  | 선택 | false | 삭제할 파일에 의해 생성된 오퍼레이션 파일도 삭제 |
 
 #### 응답
 
@@ -758,7 +759,7 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 [요청 본문]
 
 - 이미지의 가로 세로 중 긴 축 길이를 기준으로 사이즈를 100x100으로 줄이는 작업을 100x100이라는 이름으로 생성 또는 수정합니다.
-- {appKey}와 {secretKey}는 Console에서 확인한 값으로 변경합니다.
+- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
 curl -X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100" \
@@ -773,7 +774,7 @@ curl -X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 
 | 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
 |---|---|---|---|---|---|
-| operationId | String | 최소 1글자, 최대 20글자, <br>영문 또는 숫자 | 필수 |  | 생성 및 수정 할 오퍼레이션 이름 |
+| operationId | String | 최소 1글자, 최대 20글자, <br>영문 또는 숫자 | 필수 |  | 생성 및 수정할 오퍼레이션 이름 |
 | description | String | 최대 30글자 | 선택 |  | 오퍼레이션 설명 |
 | realtimeService | boolean |  | 선택 | true | 실시간 서비스 제공 여부 |
 | deleteThumbnail | boolean |  | 선택 | false | 기존에 해당 오퍼레이션으로 생성된 썸네일을 삭제할지 여부 |
@@ -886,7 +887,7 @@ curl -X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 										// 기준 위치
 		"offsetX": int,					// (optional, default: 0) 기준 위치 이동. 음수는 반대로 이동
 		"offsetY": int,					// (optional, default: 0) 기준 위치 이동. 음수는 반대로 이동
-		"watermarkImagePath": String 	// (Required) 합성 할 이미지 파일의 경로
+		"watermarkImagePath": String 	// (Required) 합성할 이미지 파일의 경로
 	}
 }
 ```
@@ -957,7 +958,7 @@ curl -X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 [요청 본문]
 
 - 사용자의 오퍼레이션 목록을 조회합니다.
-- {appKey}와 {secretKey}는 Console에서 확인한 값으로 변경합니다.
+- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
 curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations" \
@@ -968,7 +969,7 @@ curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 
 | 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
 |---|---|---|---|---|---|
-| name | String | 최대 20글자, <br>영문 또는 숫자 | 선택 |  | 검색 할 오퍼레이션 이름 (입력 값으로 시작하는) |
+| name | String | 최대 20글자, <br>영문 또는 숫자 | 선택 |  | 검색할 오퍼레이션 이름 (입력 값으로 시작하는) |
 | page | int | 최소 1 | 선택 | 1 | 페이지 번호 |
 | rows | int | 최대 10,000 | 선택 | 20 | 조회 개수 |
 | sort | String |  | 선택 | date:desc | 정렬 방식 (정렬대상 : name or date, 정렬방식 : asc or desc) |
@@ -1051,7 +1052,7 @@ curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 [요청 본문]
 
 - 100x100 오퍼레이션을 조회합니다.
-- {appKey}와 {secretKey}는 Console에서 확인한 값으로 변경합니다.
+- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
 curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100" \
@@ -1124,7 +1125,7 @@ curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 [요청 본문]
 
 - 100x100 오퍼레이션을 삭제합니다.
-- {appKey}와 {secretKey}는 Console에서 확인한 값으로 변경합니다.
+- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
 curl -X DELETE "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100" \
@@ -1166,8 +1167,8 @@ curl -X DELETE "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/op
 
 [요청 본문]
 
-- /myfolder/left.png, /myfolder/right.png 원본 파일로 100x100 오퍼레이션 옵션이 적용된 파일을 생성합니다
-- {appKey}와 {secretKey}는 Console에서 확인한 값으로 변경합니다.
+- /myfolder/left.png, /myfolder/right.png 원본 파일로 100x100 오퍼레이션 옵션이 적용된 파일을 생성합니다.
+- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
 curl -X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations-exec" \
@@ -1182,8 +1183,8 @@ curl -X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/oper
 | 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
 |---|---|---|---|---|---|
 | basepath | String | 최소 2글자, 최대 255Byte | 필수 |  | 기준이 되는 폴더의 절대 경로 |
-| filepaths | String List |  | 필수 |  | 실행 할 절대 경로의 폴더 및 파일 리스트 |
-| operationIds | String List |  | 필수 |  | 실행 할 오퍼레이션 ID 리스트 |
+| filepaths | String List |  | 필수 |  | 실행할 절대 경로의 폴더 및 파일 리스트 |
+| operationIds | String List |  | 필수 |  | 실행할 오퍼레이션 ID 리스트 |
 | callbackUrl | String |  | 선택 |  | 처리 결과를 통보받을 URL 경로. <br>query string 형식으로 id를 적으면 callback 전송 시 같이 전달됨. <br>포트는 80, 443만 지원 |
 
 #### 응답
@@ -1335,7 +1336,7 @@ curl -X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/oper
 [요청 본문]
 
 - 사용자의 실시간 서비스를 조회합니다.
-- {appKey}와 {secretKey}는 Console에서 확인한 값으로 변경합니다.
+- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
 curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users" \
@@ -1384,7 +1385,7 @@ curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users
 [요청 본문]
 
 - 사용자의 실시간 서비스를 변경합니다.
-- {appKey}와 {secretKey}는 Console에서 확인한 값으로 변경합니다.
+- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
 curl -X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users" \
@@ -1431,7 +1432,7 @@ curl -X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users
 [요청 본문]
 
 - 오퍼레이션 요청에 대한 현재 상태를 조회합니다.
-- {appKey}와 {secretKey}는 Console에서 확인한 값으로 변경합니다.
+- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
 curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/queues/6691a01a-4585-4e26-989c-8ef25dd627a0" \
@@ -1442,7 +1443,7 @@ curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/queue
 
 | 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
 |---|---|---|---|---|---|
-| queueId | String | 최대 64글자 | 필수 |  | 조회 할 작업 고유 ID |
+| queueId | String | 최대 64글자 | 필수 |  | 조회할 작업 고유 ID |
 
 #### 응답
 
