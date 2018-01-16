@@ -140,7 +140,7 @@ curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folde
 | 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
 |---|---|---|---|---|---|
 | basepath | String | 최소 2글자, 최대 255Byte | 필수 |  | 조회 할 폴더의 전체 경로 |
-| createdBy | String | 1글자 | 선택 |  | 목록 조회 대상 (공백: 전체, U: 사용자 업로드 이미지, P: 오퍼레이션 이미지) |
+| createdBy | String | 1글자 | 선택 |  | 목록 조회 대상 <br>(공백: 전체, <br>U: 사용자 업로드 이미지, <br>P: 오퍼레이션 이미지) |
 | name | String | 최소 2글자, 최대 255Byte | 선택 |  | 검색 할 이미지 이름 |
 | page | int | 최소 1 | 선택 | 1 | 페이지 번호 |
 | rows | int | 최소 1, 최대 10,000 | 선택 | 100 | 조회 개수 |
@@ -330,7 +330,7 @@ curl -X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/image
 |---|---|---|---|---|---|
 | path | String | 최소 2글자, 최대 255Byte | 필수 |  | 생성 할 절대 경로의 파일명 |
 | overwrite | boolean |  | 선택 | false | 같은 이름이 있을 경우 덮어쓰기 여부 |
-| autorename | boolean |  | 선택 | false | 같은 이름이 있을 경우 "이름(1).확장자" 형식으로 파일명 변경 여부 |
+| autorename | boolean |  | 선택 | false | 같은 이름이 있을 경우 <br>"이름(1).확장자" 형식으로 파일명 변경 여부 |
 | operationIds | String List |  | 선택 |  | 이미지 오퍼레이션 ID 리스트 (콤마로 구분됨) |
 
 - 이미지 오퍼레이션 ID를 추가해서 요청할 경우, 업로드 시 원하는 옵션으로 오퍼레이션 파일을 생성할 수 있습니다. 이미지 오퍼레이션 관련 API를 참고합니다.
@@ -446,9 +446,9 @@ curl -X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/imag
 | params | String |  | 필수 |  | 업로드 옵션 (json 형태의 문자열) |
 | params.basepath | String | 최소 2글자, 최대 255Byte | 필수 |  | 업로드 할 절대 경로 |
 | params.overwrite | boolean |  | 선택 | false | 같은 이름이 있을 경우 덮어쓰기 여부 |
-| params.autorename | boolean |  | 선택 | false | 같은 이름이 있을 경우 "이름(1).확장자" 형식으로 파일명 변경 여부 |
-| params.operationIds | String List |  | 선택 |  | 이미지 오퍼레이션 ID 리스트. 업로드 시 원하는 옵션으로 오퍼레이션 파일을 생성. 이미지 오퍼레이션 관련 API 참고 |
-| params.callbackUrl | String |  | 선택 |  | 처리 결과를 통보받을 콜백 Url 경로. query string 형식으로 id를 적으면 콜백 전송 시 같이 전달됨. 포트는 80, 443만 지원 |
+| params.autorename | boolean |  | 선택 | false | 같은 이름이 있을 경우 <br>"이름(1).확장자" 형식으로 파일명 변경 여부 |
+| params.operationIds | String List |  | 선택 |  | 이미지 오퍼레이션 ID 리스트. <br>업로드 시 원하는 옵션으로 오퍼레이션 파일을 생성. <br>이미지 오퍼레이션 관련 API 참고 |
+| params.callbackUrl | String |  | 선택 |  | 처리 결과를 통보받을 콜백 Url 경로. <br>query string 형식으로 id를 적으면 콜백 전송 시 같이 전달됨. <br>포트는 80, 443만 지원 |
 
 #### 응답
 
@@ -773,7 +773,7 @@ curl -X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 
 | 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
 |---|---|---|---|---|---|
-| operationId | String | 최소 1글자, 최대 20글자, 영문 또는 숫자 | 필수 |  | 생성 및 수정 할 오퍼레이션 이름 |
+| operationId | String | 최소 1글자, 최대 20글자, <br>영문 또는 숫자 | 필수 |  | 생성 및 수정 할 오퍼레이션 이름 |
 | description | String | 최대 30글자 | 선택 |  | 오퍼레이션 설명 |
 | realtimeService | boolean |  | 선택 | true | 실시간 서비스 제공 여부 |
 | deleteThumbnail | boolean |  | 선택 | false | 기존에 해당 오퍼레이션으로 생성된 썸네일을 삭제할지 여부 |
@@ -968,7 +968,7 @@ curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 
 | 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
 |---|---|---|---|---|---|
-| name | String | 최대 20글자, 영문 또는 숫자 | 선택 |  | 검색 할 오퍼레이션 이름 (입력 값으로 시작하는) |
+| name | String | 최대 20글자, <br>영문 또는 숫자 | 선택 |  | 검색 할 오퍼레이션 이름 (입력 값으로 시작하는) |
 | page | int | 최소 1 | 선택 | 1 | 페이지 번호 |
 | rows | int | 최대 10,000 | 선택 | 20 | 조회 개수 |
 | sort | String |  | 선택 | date:desc | 정렬 방식 (정렬대상 : name or date, 정렬방식 : asc or desc) |
@@ -1184,7 +1184,7 @@ curl -X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/oper
 | basepath | String | 최소 2글자, 최대 255Byte | 필수 |  | 기준이 되는 폴더의 절대 경로 |
 | filepaths | String List |  | 필수 |  | 실행 할 절대 경로의 폴더 및 파일 리스트 |
 | operationIds | String List |  | 필수 |  | 실행 할 오퍼레이션 ID 리스트 |
-| callbackUrl | String |  | 선택 |  | 처리 결과를 통보받을 URL 경로. query string 형식으로 id를 적으면 callback 전송 시 같이 전달됨. 포트는 80, 443만 지원 |
+| callbackUrl | String |  | 선택 |  | 처리 결과를 통보받을 URL 경로. <br>query string 형식으로 id를 적으면 callback 전송 시 같이 전달됨. <br>포트는 80, 443만 지원 |
 
 #### 응답
 
