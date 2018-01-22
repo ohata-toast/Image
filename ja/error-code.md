@@ -1,7 +1,7 @@
 ## Contents Delivery > Image > 오류 코드
 
 | resultCode | resultKey | resultMessage |
-| --- | --- | ---- |
+|---|---|----|
 | 0 | SUCCESS | Success |
 | 1 | PARTIAL_SUCCESS | Partial Success |
 | 2 | UPLOAD_ALL_FAIL | Fail |
