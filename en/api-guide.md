@@ -70,10 +70,10 @@ Image 서비스의 API를 설명합니다.
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders" \
--H "Authorization: {secretKey}" \
--H "Content-Type: application/json" \
---data "{'path': '/myfolder'}"
+curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders' \
+-H 'Authorization: {secretKey}' \
+-H 'Content-Type: application/json' \
+--data '{"path": "/myfolder"}'
 ```
 
 [필드]
@@ -131,8 +131,8 @@ curl -X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/fold
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders?basepath=/myfolder" \
--H "Authorization: {secretKey}"
+curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders?basepath=/myfolder' \
+-H 'Authorization: {secretKey}'
 ```
 
 [옵션]
@@ -249,8 +249,8 @@ curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folde
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/properties?path=/myfolder" \
--H "Authorization: {secretKey}"
+curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/properties?path=/myfolder' \
+-H 'Authorization: {secretKey}'
 ```
 
 [옵션]
@@ -318,10 +318,10 @@ curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/prope
 - 이미지 파일의 Binary Data를 넣습니다.
 
 ```
-curl -X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images?path=/myfolder/sample.png&overwrite=true" \
--H "Authorization: {secretKey}" \
--H "Content-Type:application/octet-stream" \
---data-binary "path/to/imageFile/@sample.png"
+curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images?path=/myfolder/sample.png&overwrite=true' \
+-H 'Authorization: {secretKey}' \
+-H 'Content-Type:application/octet-stream' \
+--data-binary 'path/to/imageFile/@sample.png'
 ```
 
 [옵션]
@@ -432,11 +432,11 @@ curl -X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/image
 - multipart/form–data 형식으로 전달합니다.
 
 ```
-curl -X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images" \
--H "Authorization: {secretKey}" \
--F "params={'basepath': '/myfolder/banner', 'overwrite': true, 'operationIds':['100x100']}" \
--F "files=@left.png" \
--F "files=@right.png"
+curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images' \
+-H 'Authorization: {secretKey}' \
+-F 'params={"basepath": "/myfolder/banner", "overwrite": true, "operationIds":["100x100"]}' \
+-F 'files=@left.png' \
+-F 'files=@right.png'
 ```
 
 [필드]
@@ -635,9 +635,9 @@ curl -X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/imag
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X DELETE "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images/sync?
-fileId=9cf11176-045c-4708-8dbd-35633f029a91" \
--H "Authorization:{secretKey}"
+curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images/sync?
+fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
+-H 'Authorization: {secretKey}'
 ```
 
 [필드]
@@ -685,9 +685,9 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91" \
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X DELETE "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images/async?
-fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a8" \
--H "Authorization:{secretKey}"
+curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images/async?
+fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a8' \
+-H 'Authorization: {secretKey}'
 ```
 
 [필드]
@@ -762,12 +762,12 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100" \
--H "Authorization:{secretKey}" \
--H "Content-Type: application/json" \
---data "{'description': '', 'realtimeService': true, 'data': [{'templateOperationId': 'resize_max_fit',
-'option': {'resizeType': 'max_fit', 'width': 100, 'height': 100, 'quality': 80, 'upDownSizeType':
-'downOnly'}}]}"
+curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
+-H 'Authorization: {secretKey}' \
+-H 'Content-Type: application/json' \
+--data '{"description": "", "realtimeService": true, "data": [{"templateOperationId": "resize_max_fit",
+"option": {"resizeType": "max_fit", "width": 100, "height": 100, "quality": 80,
+"upDownSizeType": "downOnly"}}]}'
 ```
 
 [필드]
@@ -961,8 +961,8 @@ curl -X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations" \
--H "Authorization:{secretKey}"
+curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations' \
+-H 'Authorization: {secretKey}'
 ```
 
 [필드]
@@ -1055,8 +1055,8 @@ curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100" \
--H "Authorization:{secretKey}"
+curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
+-H 'Authorization: {secretKey}'
 ```
 
 #### 응답
@@ -1128,8 +1128,8 @@ curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X DELETE "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100" \
--H "Authorization:{secretKey}"
+curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
+-H 'Authorization: {secretKey}'
 ```
 
 [옵션]
@@ -1171,11 +1171,11 @@ curl -X DELETE "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/op
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations-exec" \
--H "Authorization:{secretKey}" \
--H "Content-Type: application/json" \
---data "{'basepath': '/myfolder', 'operationIds': ['100x100'], 'filepaths': ['/myfolder/left.png',
-'/myfolder/right.jpg']}"
+curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations-exec' \
+-H 'Authorization: {secretKey}' \
+-H 'Content-Type: application/json' \
+--data '{"basepath": "/myfolder", "operationIds": ["100x100"],
+"filepaths": ["/myfolder/left.png", "/myfolder/right.jpg"]}'
 ```
 
 [필드]
@@ -1339,8 +1339,8 @@ curl -X POST "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/oper
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users" \
--H "Authorization:{secretKey}"
+curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users' \
+-H 'Authorization: {secretKey}'
 ```
 
 #### 응답
@@ -1388,10 +1388,10 @@ curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users" \
--H "Authorization:{secretKey}" \
--H "Content-Type: application/json" \
---data "{'realtimeService': false}"
+curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users' \
+-H 'Authorization: {secretKey}' \
+-H 'Content-Type: application/json' \
+--data '{"realtimeService": false}'
 ```
 
 [필드]
@@ -1435,8 +1435,8 @@ curl -X PUT "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users
 - {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X GET "https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/queues/6691a01a-4585-4e26-989c-8ef25dd627a0" \
--H "Authorization:{secretKey}"
+curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/queues/6691a01a-4585-4e26-989c-8ef25dd627a0' \
+-H 'Authorization: {secretKey}'
 ```
 
 [필드]
