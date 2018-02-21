@@ -1,4 +1,4 @@
-## Contents Delivery > Image > API 가이드
+## Contents Delivery > Image > API Guide
 
 Image 서비스의 API를 설명합니다.
 
