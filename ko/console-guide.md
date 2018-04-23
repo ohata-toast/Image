@@ -1,4 +1,4 @@
-## Contents Delivery > Image > 콘솔 사용 가이드
+## Content Delivery > Image > 콘솔 사용 가이드
 
 Image 서비스를 사용하기 위해서 먼저 서비스를 활성화해야 하며, 서비스가 활성화되면 폴더를 생성하고 이미지를 업로드할 수 있습니다.
 

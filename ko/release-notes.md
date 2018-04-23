@@ -1,4 +1,4 @@
-## Contents Delivery > Image > 릴리스 노트
+## Content Delivery > Image > 릴리스 노트
 
 ### 2018.02.22
 #### 기능 개선/변경
