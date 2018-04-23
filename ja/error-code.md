@@ -1,4 +1,4 @@
-## Contents Delivery > Image > Error Code
+## Content Delivery > Image > Error Code
 
 | resultCode | resultKey | resultMessage |
 |---|---|----|
