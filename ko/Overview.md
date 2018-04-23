@@ -1,4 +1,4 @@
-## Contents Delivery > Image > 개요
+## Content Delivery > Image > 개요
 
 고객님의 서비스에서 사용하는 이미지를 저장, 편집 그리고 전송까지 한번에 제공하는 시스템입니다.
 
