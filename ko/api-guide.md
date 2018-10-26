@@ -7,19 +7,9 @@ Image 서비스의 API를 설명합니다.
 
 ### 사전 준비
 
-- API 사용을 위해서는 앱 키와 보안 키가 필요합니다.
-- 앱 키와 보안 키는 콘솔 상단 "URL & Appkey" 메뉴에서 확인이 가능합니다.
-
-### 요청 공통 정보
-
-- API를 사용하기 위해서는 보안 키 인증 처리가 필요합니다.
-- 모든 API 요청 헤더에 'Authorization'에 보안 키를 넣어서 요청해야 합니다.
-
-[요청 헤더]
-
-| 이름 | 값 | 설명 |
-|---|---|---|
-| Authorization | {secretKey} | 콘솔에서 발급받은 보안 키 |
+- API 사용을 위해서는 앱 키가 필요합니다.
+- 앱 키는 콘솔 상단 "URL & Appkey" 메뉴에서 확인이 가능합니다.
+- [앱 키 사용자 가이드](https://docs.toast.com/ko/TOAST/ko/user-guide/)를 참고해 주세요.
 
 ### 응답 공통 정보
 
@@ -67,11 +57,10 @@ Image 서비스의 API를 설명합니다.
 [요청 본문]
 
 - myfolder라는 이름의 폴더를 루트 폴더 하위에 생성합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- {appKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
 curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders' \
--H 'Authorization: {secretKey}' \
 -H 'Content-Type: application/json' \
 --data '{"path": "/myfolder"}'
 ```
@@ -128,11 +117,10 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/fold
 [요청 본문]
 
 - /myfolder 하위의 폴더와 파일을 조회합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- {appKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders?basepath=/myfolder' \
--H 'Authorization: {secretKey}'
+curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folders?basepath=/myfolder'
 ```
 
 [옵션]
@@ -246,11 +234,10 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/folde
 [요청 본문]
 
 - myfolder의 폴더의 속성을 조회합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- {appKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/properties?path=/myfolder' \
--H 'Authorization: {secretKey}'
+curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/properties?path=/myfolder'
 ```
 
 [옵션]
@@ -314,12 +301,11 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/prope
 [요청 본문]
 
 - /myfolder 폴더에 sample.png 이미지를 업로드 합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- {appKey}는 콘솔에서 확인한 값으로 변경합니다.
 - 이미지 파일의 Binary Data를 넣습니다.
 
 ```
 curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images?path=/myfolder/sample.png&overwrite=true' \
--H 'Authorization: {secretKey}' \
 -H 'Content-Type:application/octet-stream' \
 --data-binary 'path/to/imageFile/@sample.png'
 ```
@@ -428,12 +414,11 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/image
 [요청 본문]
 
 - /myfolder/banner 폴더에 left.png, right.png 이미지를 업로드 합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- {appKey}는 콘솔에서 확인한 값으로 변경합니다.
 - multipart/form–data 형식으로 전달합니다.
 
 ```
 curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images' \
--H 'Authorization: {secretKey}' \
 -F 'params={"basepath": "/myfolder/banner", "overwrite": true, "operationIds":["100x100"]}' \
 -F 'files=@left.png' \
 -F 'files=@right.png'
@@ -632,12 +617,11 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/imag
 
 - /myfolder/sample.png의 파일을 삭제합니다.
 - /myfolder/sample.png의 ID는 우측 메뉴의 "폴더 내 파일 목록 조회" API를 통해서 알 수 있습니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- {appKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
 curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images/sync?
-fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
--H 'Authorization: {secretKey}'
+fileId=9cf11176-045c-4708-8dbd-35633f029a91'
 ```
 
 [필드]
@@ -682,12 +666,11 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 
 - /myfolder/banner/left.png, /myfolder/banner/right.png의 파일을 삭제합니다.
 - 파일 및 폴더 ID는 [폴더 내 파일 목록 조회](./api-guide/#_7)를 통해서 알 수 있습니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- {appKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
 curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/images/async?
-fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a8' \
--H 'Authorization: {secretKey}'
+fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a8'
 ```
 
 [필드]
@@ -759,11 +742,10 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 [요청 본문]
 
 - 이미지의 가로 세로 중 긴 축 길이를 기준으로 사이즈를 100x100으로 줄이는 작업을 100x100이라는 이름으로 생성 또는 수정합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- {appKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
 curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
--H 'Authorization: {secretKey}' \
 -H 'Content-Type: application/json' \
 --data '{"description": "", "realtimeService": true, "data": [{"templateOperationId": "resize_max_fit",
 "option": {"resizeType": "max_fit", "width": 100, "height": 100, "quality": 80,
@@ -958,11 +940,10 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 [요청 본문]
 
 - 사용자의 오퍼레이션 목록을 조회합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- {appKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations' \
--H 'Authorization: {secretKey}'
+curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations'
 ```
 
 [필드]
@@ -1052,11 +1033,10 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 [요청 본문]
 
 - 100x100 오퍼레이션을 조회합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- {appKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
--H 'Authorization: {secretKey}'
+curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100'
 ```
 
 #### 응답
@@ -1125,11 +1105,10 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/opera
 [요청 본문]
 
 - 100x100 오퍼레이션을 삭제합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- {appKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100' \
--H 'Authorization: {secretKey}'
+curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations/100x100'
 ```
 
 [옵션]
@@ -1168,11 +1147,10 @@ curl -X DELETE 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/op
 [요청 본문]
 
 - /myfolder/left.png, /myfolder/right.png 원본 파일로 100x100 오퍼레이션 옵션이 적용된 파일을 생성합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- {appKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
 curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/operations-exec' \
--H 'Authorization: {secretKey}' \
 -H 'Content-Type: application/json' \
 --data '{"basepath": "/myfolder", "operationIds": ["100x100"],
 "filepaths": ["/myfolder/left.png", "/myfolder/right.jpg"]}'
@@ -1336,11 +1314,10 @@ curl -X POST 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/oper
 [요청 본문]
 
 - 사용자의 실시간 서비스를 조회합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- {appKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users' \
--H 'Authorization: {secretKey}'
+curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users'
 ```
 
 #### 응답
@@ -1385,11 +1362,10 @@ curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users
 [요청 본문]
 
 - 사용자의 실시간 서비스를 변경합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- {appKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
 curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users' \
--H 'Authorization: {secretKey}' \
 -H 'Content-Type: application/json' \
 --data '{"realtimeService": false}'
 ```
@@ -1432,11 +1408,10 @@ curl -X PUT 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/users
 [요청 본문]
 
 - 오퍼레이션 요청에 대한 현재 상태를 조회합니다.
-- {appKey}와 {secretKey}는 콘솔에서 확인한 값으로 변경합니다.
+- {appKey}는 콘솔에서 확인한 값으로 변경합니다.
 
 ```
-curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/queues/6691a01a-4585-4e26-989c-8ef25dd627a0' \
--H 'Authorization: {secretKey}'
+curl -X GET 'https://api-image.cloud.toast.com/image/v2.0/appkeys/{appKey}/queues/6691a01a-4585-4e26-989c-8ef25dd627a0'
 ```
 
 [필드]
