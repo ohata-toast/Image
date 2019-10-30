@@ -647,7 +647,7 @@ fileId=9cf11176-045c-4708-8dbd-35633f029a91' \
 | 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
 |---|---|---|---|---|---|
 | folderId | String | 최대 50글자 |  |  | 삭제할 폴더의 ID |
-| fileld | String | 최대 50글자 |  |  | 삭제할 파일의 ID |
+| fileId | String | 최대 50글자 |  |  | 삭제할 파일의 ID |
 | includeThumbnail | boolean |  | 선택 | false | 삭제할 파일에 의해 생성된 오퍼레이션 파일도 삭제 |
 
 #### 응답
@@ -697,7 +697,7 @@ fileIds=5fa8ce52-d066-490c-85dd-f8cef181dd28,96f726bd-93e4-4f7c-ad55-56e85aa323a
 | 이름 | 타입 | 유효 범위 | 필수 여부 | 기본값 | 설명 |
 |---|---|---|---|---|---|
 | folderIds | String | ID 하나 당 최대 50글자 |  |  | 삭제할 폴더의 ID 리스트 (콤마로 구분됨) |
-| files | String | ID 하나 당 최대 50글자 |  |  | 삭제할 파일의 ID 리스트 (콤마로 구분됨) |
+| fileIds | String | ID 하나 당 최대 50글자 |  |  | 삭제할 파일의 ID 리스트 (콤마로 구분됨) |
 | includeThumbnail | boolean |  | 선택 | false | 삭제할 파일에 의해 생성된 오퍼레이션 파일도 삭제 |
 
 #### 응답
