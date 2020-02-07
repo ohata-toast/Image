@@ -61,6 +61,11 @@
 
 - 폴더 내 파일도 모두 삭제가 됩니다.
 
+
+### 파일/폴더 이동 기능 추가
+- 기능이 추가됨 
+
+
 ### 속성 보기
 
 ![image_07_201812](https://static.toastoven.net/prod_img/image_07_201812.png)
